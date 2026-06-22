@@ -8,14 +8,15 @@ const artikel = articles.find((item) => item.id === id);
 
 if (!artikel) {
   document.body.innerHTML = `
-<h1
-style="
-text-align:center;
-margin-top:100px;
-">
-Artikel tidak ditemukan
-</h1>
-`;
+    <h1
+      style="
+      text-align:center;
+      margin-top:100px;
+      "
+    >
+      Artikel tidak ditemukan
+    </h1>
+  `;
 } else {
   document.getElementById("artikelGambar").src = artikel.gambar;
 
