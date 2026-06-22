@@ -8,7 +8,7 @@ function loadDetailPembayaran() {
     <h2>Pembayaran QRIS</h2>
 
     <img
-        src="../assets/img/qris.png"
+        src="../assets/img/qris.jpg"
         class="qris-image"
         alt="QRIS"
     >
