@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kelola Artikel | ZENIS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/artikel_admin.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+
+      <div class="header">
+        <div>
+          <h1>Kelola Artikel</h1>
+
+          <p>Kelola artikel wellness dan edukasi untuk pengguna ZENIS</p>
+        </div>
+
+        <a href="dashboard_admin.html" class="dashboard-btn"> Dashboard </a>
+      </div>
+
+      <!-- FORM -->
+
+      <div class="form-card">
+        <div class="section-title">
+          <h2>Tambah Artikel</h2>
+
+          <span> ✍️ Artikel Baru </span>
+        </div>
+
+        <form id="artikelForm">
+          <div class="form-grid">
+            <input
+              type="text"
+              id="judul"
+              placeholder="Judul Artikel"
+              required
+            />
+
+            <select id="kategori">
+              <option value="Yoga">Yoga</option>
+              <option value="Spa">Spa</option>
+              <option value="Wellness">Wellness</option>
+              <option value="Beauty">Beauty</option>
+            </select>
+
+            <input type="file" id="gambar" accept="image/*" />
+
+            <input type="date" id="tanggal" required />
+
+            <input
+              type="text"
+              id="penulis"
+              placeholder="Nama Penulis"
+              required
+            />
+          </div>
+
+          <textarea
+            id="ringkasan"
+            rows="3"
+            placeholder="Ringkasan Artikel"
+            required
+          ></textarea>
+
+          <textarea
+            id="isi"
+            rows="10"
+            placeholder="Isi Artikel Lengkap"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn-save">Publikasikan Artikel</button>
+        </form>
+      </div>
+
+      <!-- TABLE -->
+
+      <div class="table-card">
+        <div class="section-title">
+          <h2>Daftar Artikel</h2>
+
+          <span> 📚 Arsip Artikel </span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+
+              <th>Judul</th>
+
+              <th>Kategori</th>
+
+              <th>Penulis</th>
+
+              <th>Tanggal</th>
+
+              <th>Status</th>
+
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="artikelTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../../assets/js/artikel_admin.js"></script>
+  </body>
+</html>

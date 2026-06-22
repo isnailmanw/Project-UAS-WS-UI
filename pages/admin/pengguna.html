@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kelola Pengguna | ZENIS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/pengguna.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Kelola Pengguna</h1>
+
+          <p>Pantau dan kelola seluruh pengguna ZENIS</p>
+        </div>
+
+        <a href="dashboard_admin.html" class="dashboard-btn"> Dashboard </a>
+      </div>
+
+      <!-- STATISTIK -->
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h2 id="totalUser">0</h2>
+
+          <p>Total Pengguna</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="totalAdmin">0</h2>
+
+          <p>Admin</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="totalMember">0</h2>
+
+          <p>User</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="totalAktif">0</h2>
+
+          <p>Aktif</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="section-title">
+          <h2>Tambah Pengguna</h2>
+
+          <span>➕ Pengguna Baru</span>
+        </div>
+
+        <form id="userForm">
+          <div class="form-grid">
+            <input type="text" id="nama" placeholder="Nama Pengguna" required />
+
+            <input type="email" id="email" placeholder="Email" required />
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+
+            <select id="role">
+              <option value="user">User</option>
+
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-save">Tambah Pengguna</button>
+        </form>
+      </div>
+      <!-- TABEL -->
+
+      <div class="table-card">
+        <div class="section-title">
+          <h2>Daftar Pengguna</h2>
+
+          <span> 👥 Pengguna ZENIS </span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+
+              <th>Nama</th>
+
+              <th>Email</th>
+
+              <th>Role</th>
+
+              <th>Status</th>
+
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="userTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../../assets/js/pengguna.js"></script>
+  </body>
+</html>

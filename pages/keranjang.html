@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keranjang - ZENIS</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/keranjang.css" />
+   
+  </head>
+
+  <body>
+  
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <div class="logo">ZEN<span>IS</span></div>
+
+      <div class="nav-menu">
+        <a href="dashboard_user.html"> Beranda </a>
+
+        <a href="artikel.html"> Artikel </a>
+
+        <a href="history.html"> Riwayat </a>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+      <div class="page-header">
+        <h1>Keranjang Saya</h1>
+
+        <p>Kelola layanan wellness yang akan Anda pesan.</p>
+      </div>
+
+      <div class="cart-layout">
+        <!-- LIST ITEM -->
+
+        <div class="cart-section">
+          <div id="keranjang-list"></div>
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="summary-box">
+          <h3>Ringkasan Pesanan</h3>
+
+          <div class="summary-row">
+            <span>Total Pembayaran</span>
+
+            <strong id="total-harga"> Rp0 </strong>
+          </div>
+
+          <button class="checkout-btn" onclick="checkout()">
+            Lanjut Pembayaran
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/keranjang.js"></script>
+   
+  </body>
+</html>

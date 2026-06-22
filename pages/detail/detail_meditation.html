@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Meditation Session</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
+    
+  </head>
+
+  <body>
+    <nav class="navbar">
+      
+      <div class="logo">ZEN<span>IS</span></div>
+
+      <div class="nav-menu">
+        <a href="../dashboard_user.html"> Beranda </a>
+
+        <a href="../artikel.html"> Artikel </a>
+
+        <a href="../history.html"> Riwayat </a>
+      </div>
+
+      <div class="nav-right">
+        <a href="../keranjang.html"> 🛒 </a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="detail-wrapper">
+        <!-- GAMBAR -->
+
+        <img
+          class="product-image"
+          src="../../assets/img/meditation.jpg"
+          alt="Meditation Session"
+        />
+
+        <!-- DETAIL -->
+
+        <div class="product-info">
+          <h1>Meditation Session</h1>
+
+          <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+
+          <div class="price">Rp125.000</div>
+
+          <p class="description">
+            Meditation Session merupakan sesi meditasi terpandu yang membantu
+            peserta mencapai ketenangan batin, meningkatkan fokus, serta
+            mengurangi stres akibat aktivitas sehari-hari. Dengan teknik
+            mindfulness dan latihan pernapasan yang dipandu oleh instruktur,
+            peserta dapat merasakan relaksasi yang lebih mendalam dan kualitas
+            hidup yang lebih baik.
+          </p>
+
+          <div class="product-meta">
+            <div class="meta-box">
+              <span>Durasi</span>
+              <strong>75 Menit</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Kapasitas</span>
+              <strong>15 Peserta</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Level</span>
+              <strong>Semua Level</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Rating</span>
+              <strong>4.8/5</strong>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button
+              class="cart-btn"
+              onclick="tambahKeranjang('Meditation Session', 125000)"
+            >
+              🛒 Tambah Keranjang
+            </button>
+
+            <button
+              class="buy-btn"
+              onclick="pesanSekarang('Meditation Session', 125000)"
+            >
+              ⚡ Pesan Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFIT -->
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Benefits</h3>
+
+          <ul>
+            <li>✓ Mengurangi stres dan kecemasan secara efektif</li>
+
+            <li>✓ Meningkatkan fokus dan konsentrasi</li>
+
+            <li>✓ Membantu kualitas tidur menjadi lebih baik</li>
+
+            <li>✓ Menumbuhkan kesadaran diri dan keseimbangan emosi</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Fasilitas</h3>
+
+          <ul>
+            <li>✓ Instruktur Meditasi Profesional</li>
+
+            <li>✓ Ruang Meditasi yang Tenang dan Nyaman</li>
+
+            <li>✓ Audio Guided Meditation</li>
+
+            <li>✓ Air Mineral dan Teh Herbal Gratis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/keranjang.js"></script>
+   
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pembayaran - ZENIS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/pembayaran.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">ZEN<span>IS</span></div>
+
+      <div class="nav-menu">
+        <a href="dashboard_user.html"> Beranda </a>
+
+        <a href="artikel.html"> Artikel </a>
+
+        <a href="history.html"> Riwayat </a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>Pembayaran</h1>
+
+        <p>Periksa kembali layanan yang akan Anda pesan.</p>
+      </div>
+
+      <div class="payment-layout">
+        <!-- KIRI -->
+
+        <div>
+          <div class="card">
+            <h2>Layanan Dipilih</h2>
+
+            <div id="payment-items"></div>
+          </div>
+
+          <div class="card">
+            <h2>Metode Pembayaran</h2>
+
+            <div class="payment-methods">
+              <label class="method-card">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="qris"
+                  onclick="showPaymentInfo()"
+                />
+
+                <span>📱 QRIS</span>
+              </label>
+
+              <label class="method-card">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="bca"
+                  onclick="showPaymentInfo()"
+                />
+
+                <span>🏦 Transfer BCA</span>
+              </label>
+
+              <label class="method-card">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="bri"
+                  onclick="showPaymentInfo()"
+                />
+
+                <span>🏦 Transfer BRI</span>
+              </label>
+
+              <label class="method-card">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="ewallet"
+                  onclick="showPaymentInfo()"
+                />
+
+                <span>💳 E-Wallet</span>
+              </label>
+            </div>
+
+            <div id="payment-info"></div>
+          </div>
+        </div>
+
+        <!-- KANAN -->
+
+        <div class="summary-box">
+          <h2>Ringkasan Pesanan</h2>
+
+          <div class="summary-row">
+            <span>Total Pembayaran</span>
+
+            <strong id="payment-total"> Rp0 </strong>
+          </div>
+
+          <button class="pay-btn" onclick="selesaikanPembayaran()">
+            Buat Pesanan
+          </button>
+
+          <button class="back-btn" onclick="kembaliKeKeranjang()">
+            Kembali ke Keranjang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/pembayaran.js"></script>
+  </body>
+</html>

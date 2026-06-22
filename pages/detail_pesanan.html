@@ -1,0 +1,65 @@
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Pesanan - ZENIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/detail_pesanan.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">ZEN<span>IS</span></div>
+
+    </nav>
+    <div class="container">
+      <div class="success-header">
+        <div class="success-icon">✅</div>
+
+        <h1>Pesanan Berhasil Dibuat</h1>
+
+        <p>Pembayaran Anda telah berhasil diproses.</p>
+      </div>
+
+      <div class="order-card">
+        <h2>Detail Pesanan</h2>
+
+        <div id="order-items"></div>
+
+        <div class="info-section">
+          <div class="info-row">
+            <span>Metode Pembayaran</span>
+            <strong id="metode-bayar"></strong>
+          </div>
+
+          <div class="info-row">
+            <span>Tanggal Transaksi</span>
+            <strong id="tanggal-transaksi"></strong>
+          </div>
+
+          <div class="info-row">
+            <span>Status</span>
+            <strong class="status-success"> Pembayaran Berhasil </strong>
+          </div>
+
+          <div class="info-row total-row">
+            <span>Total Pembayaran</span>
+            <strong id="total-bayar"></strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="dashboard_user.html" class="btn-secondary">
+          Kembali ke Beranda
+        </a>
+
+        <a href="history.html" class="btn-primary"> Lihat Riwayat </a>
+      </div>
+    </div>
+    <script src="../assets/js/detail_pesanan.js"></script>
+  </body>
+</html>

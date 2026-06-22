@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Relaxation Massage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
+
+  </head>
+
+  <body>
+    <nav class="navbar">
+      
+      <div class="logo">ZEN<span>IS</span></div>
+
+      <div class="nav-menu">
+        <a href="../dashboard_user.html"> Beranda </a>
+
+        <a href="../artikel.html"> Artikel </a>
+
+        <a href="../history.html"> Riwayat </a>
+      </div>
+
+      <div class="nav-right">
+        <a href="../keranjang.html"> 🛒 </a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="detail-wrapper">
+        <!-- GAMBAR -->
+
+        <img
+          class="product-image"
+          src="../../assets/img/relaxation.jpg"
+          alt="Relaxation Massage"
+        />
+
+        <!-- DETAIL -->
+
+        <div class="product-info">
+          <h1>Relaxation Massage</h1>
+
+          <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+
+          <div class="price">Rp150.000</div>
+
+          <p class="description">
+            Relaxation Massage merupakan perawatan pijat relaksasi yang
+            dirancang untuk membantu mengurangi ketegangan otot, meredakan
+            kelelahan, serta memberikan rasa nyaman pada tubuh dan pikiran.
+            Teknik pijatan yang lembut dan menenangkan membantu meningkatkan
+            sirkulasi darah sekaligus memberikan pengalaman relaksasi yang
+            menyegarkan.
+          </p>
+
+          <div class="product-meta">
+            <div class="meta-box">
+              <span>Durasi</span>
+              <strong>60 Menit</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Kapasitas</span>
+              <strong>1 Peserta</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Terapis</span>
+              <strong>Profesional</strong>
+            </div>
+
+            <div class="meta-box">
+              <span>Rating</span>
+              <strong>4.8/5</strong>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button
+              class="cart-btn"
+              onclick="tambahKeranjang('Relaxation Massage', 150000)"
+            >
+              🛒 Tambah Keranjang
+            </button>
+
+            <button
+              class="buy-btn"
+              onclick="pesanSekarang('Relaxation Massage', 150000)"
+            >
+              ⚡ Pesan Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFIT -->
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Benefits</h3>
+
+          <ul>
+            <li>✓ Mengurangi ketegangan dan pegal pada otot</li>
+
+            <li>✓ Membantu melancarkan sirkulasi darah</li>
+
+            <li>✓ Mengurangi stres dan kelelahan setelah beraktivitas</li>
+
+            <li>✓ Memberikan rasa rileks dan nyaman pada tubuh</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Fasilitas</h3>
+
+          <ul>
+            <li>✓ Terapis Spa Profesional</li>
+
+            <li>✓ Ruang Perawatan Privat</li>
+
+            <li>✓ Handuk dan Perlengkapan Spa</li>
+
+            <li>✓ Air Mineral Gratis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/keranjang.js"></script>
+    
+  </body>
+</html>

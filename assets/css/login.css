@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f1ff, #efe7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1150px;
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.login-info {
+  flex: 1;
+  padding: 60px;
+  background: linear-gradient(180deg, #8b5cf6, #7c4dff);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.logo span {
+  color: #f5d76e;
+}
+
+.login-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.login-info p {
+  line-height: 1.8;
+  opacity: 0.95;
+  margin-bottom: 40px;
+}
+
+.wellness-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.icon-card span {
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+.login-card {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-card h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 0 4px rgba(124, 77, 255, 0.15);
+}
+
+.login-btn-main {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  border-radius: 14px;
+  background: #7c4dff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-btn-main:hover {
+  transform: translateY(-2px);
+  background: #6c3dff;
+}
+
+.extra-links {
+  margin-top: 18px;
+}
+
+.extra-links a {
+  color: #7c4dff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.register-text {
+  margin-top: 35px;
+  text-align: center;
+  color: #666;
+}
+
+.register-text a {
+  text-decoration: none;
+  color: #7c4dff;
+  font-weight: 600;
+}
+
+.back-home {
+  margin-top: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-info,
+  .login-card {
+    padding: 40px;
+  }
+
+  .login-info h1 {
+    font-size: 2rem;
+  }
+
+  .wellness-icons {
+    justify-content: center;
+  }
+}
+
+.back-home {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #8f67ff;
+  font-weight: 600;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
+
+.demo-login {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f3ebff;
+  border: 2px solid #b679ff;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.demo-login h4 {
+  color: #8f67ff;
+  margin-bottom: 10px;
+}
+
+.demo-login p {
+  margin: 6px 0;
+  color: #333;
+}
+
+.demo-login small {
+  color: #666;
+}

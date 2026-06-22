@@ -1,6 +1,6 @@
 const fades = document.querySelectorAll('.fade');
 
-window.addEventListener('scroll', () => {
+function showFadeElements(){
 
   fades.forEach(fade => {
 
@@ -12,4 +12,10 @@ window.addEventListener('scroll', () => {
 
   });
 
-});
+}
+
+/* JALAN SAAT PAGE DIBUKA */
+showFadeElements();
+
+/* JALAN SAAT SCROLL */
+window.addEventListener('scroll', showFadeElements);

@@ -1,11 +1,13 @@
 <!doctype html>
+
 <html lang="id">
   <head>
+    
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Detail Artikel | ZENIS</title>
+    <title>Detail Pembayaran - ZENIS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -14,32 +16,33 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../assets/css/detail_artikel.css" />
+    <link rel="stylesheet" href="../assets/css/detail_pembayaran.css" />
+    
   </head>
 
   <body>
     <nav class="navbar">
+      
       <div class="logo">ZEN<span>IS</span></div>
-
-      <a href="artikel.html" class="back-btn">
-    Kembali ke Artikel
-</a>
+      
     </nav>
 
     <div class="container">
-      <img id="artikelGambar" class="hero-image" />
+      
+      <div class="payment-card">
+        <h1>Selesaikan Pembayaran</h1>
 
-      <div class="artikel-header">
-        <span id="artikelKategori"></span>
+        <p class="subtitle">Gunakan metode pembayaran yang telah Anda pilih.</p>
 
-        <h1 id="artikelJudul"></h1>
+        <div id="payment-detail"></div>
 
-        <div id="artikelMeta"></div>
+        <button class="finish-btn" onclick="konfirmasiPembayaran()">
+          Saya Sudah Membayar
+        </button>
       </div>
-
-      <div id="artikelIsi" class="artikel-content"></div>
+      
     </div>
 
-    <script src="../assets/js/detail_artikel.js"></script>
+    <script src="../assets/js/detail_pembayaran.js"></script>
   </body>
 </html>

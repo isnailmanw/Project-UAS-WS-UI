@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kelola Transaksi | ZENIS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/transaksi.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Kelola Transaksi</h1>
+          <p>Pantau seluruh transaksi pengguna ZENIS</p>
+        </div>
+
+        <a href="dashboard_admin.html" class="back-btn"> Dashboard </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3 id="totalTransaksi">0</h3>
+          <p>Total Transaksi</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="pendingCount">0</h3>
+          <p>Menunggu</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="prosesCount">0</h3>
+          <p>Diproses</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="selesaiCount">0</h3>
+          <p>Selesai</p>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+
+              <th>User</th>
+
+              <th>Tanggal</th>
+
+              <th>Total</th>
+
+              <th>Metode</th>
+
+              <th>Status</th>
+
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="transaksiTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../../assets/js/transaksi.js"></script>
+  </body>
+</html>

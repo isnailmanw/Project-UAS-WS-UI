@@ -1,0 +1,452 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ZENIS Marketplace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+<div class="logo">
+ZEN<span>IS</span>
+</div>
+
+<div class="nav-menu">
+<a href="#layanan">Layanan</a>
+<a href="artikel.html">Artikel</a>
+<a href="history.html">Riwayat</a>
+</div>
+
+<div class="nav-right">
+    <a href="keranjang.html" class="icon-btn">🛒</a>
+
+    <span class="user-label">User</span>
+
+    <a href="login.html" class="logout-btn">Logout</a>
+</div>
+</nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge"> 🌿 Wellness Marketplace </span>
+
+        <h1>Temukan Layanan Wellness Terbaik untuk Tubuh dan Pikiran</h1>
+
+        <p>
+          ZENIS menyediakan layanan yoga, spa, wellness package dan beauty
+          treatment yang dapat membantu meningkatkan kualitas hidup Anda.
+        </p>
+
+        <a href="#layanan" class="hero-btn"> Jelajahi Katalog </a>
+      </div>
+    </section>
+
+    <!-- KATEGORI -->
+
+    <section class="kategori">
+      <div class="kategori-card">
+        🧘
+        <span>Yoga</span>
+      </div>
+
+      <div class="kategori-card">
+        💆
+        <span>Spa</span>
+      </div>
+
+      <div class="kategori-card">
+        🌿
+        <span>Wellness</span>
+      </div>
+
+      <div class="kategori-card">
+        ✨
+        <span>Beauty</span>
+      </div>
+    </section>
+
+    <!-- LAYANAN -->
+
+    <section id="layanan" class="layanan-section">
+      <h2>Semua Katalog Layanan Wellness</h2>
+
+      <div class="product-grid">
+        <!-- YOGA -->
+
+        <div class="product-card">
+          <img src="../assets/img/yoga.jpg"
+         alt="Beginner Yoga Class"
+         class="product-image">
+
+          <h3>Beginner Yoga Class</h3>
+
+          <p>Kelas yoga dasar untuk pemula.</p>
+
+          <div class="price">Rp95.000</div>
+
+          <div class="product-action">
+            <a href="detail/detail_yoga.html" class="detail-btn"> Detail </a>
+
+            <button
+              class="cart-btn"
+              onclick="tambahKeranjang('Beginner Yoga Class', 95000)"
+            >
+              🛒
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+           <img src="../assets/img/meditation.jpg"
+         alt="Meditation Yoga"
+         class="product-image">
+
+          <h3>Meditation Yoga</h3>
+
+          <p>Fokus pada ketenangan dan relaksasi.</p>
+
+          <div class="price">Rp125.000</div>
+
+          <div class="product-action">
+            <a href="detail/detail_meditation.html" class="detail-btn"> Detail </a>
+
+            <button
+              class="cart-btn"
+              onclick="tambahKeranjang('Meditation Yoga', 125000)"
+            >
+              🛒
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+           <img src="../assets/img/privat.jpg"
+         alt="Private Yoga Session"
+         class="product-image">
+
+          <h3>Private Yoga Session</h3>
+
+          <p>Sesi yoga eksklusif dengan instruktur pribadi.</p>
+
+          <div class="price">Rp250.000</div>
+
+          <div class="product-action">
+            <a href="detail/detail_privat.html" class="detail-btn"> Detail </a>
+
+            <button
+              class="cart-btn"
+              onclick="tambahKeranjang('Private Yoga Session', 250000)"
+            >
+              🛒
+            </button>
+          </div>
+        </div>
+
+      <!-- SPA -->
+
+<div class="product-card">
+
+   <img src="../assets/img/relaxation.jpg"
+         alt="Relaxation Massage"
+         class="product-image">
+
+  <h3>Relaxation Massage</h3>
+
+  <p>
+    Meredakan stres dan ketegangan tubuh.
+  </p>
+
+  <div class="price">Rp150.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/spa_relaxation.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Relaxation Massage',150000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+
+  <img src="../assets/img/aromatherapy.jpg"
+         alt="Aromatherapy Massage"
+         class="product-image">
+
+  <h3>Aromatherapy Massage</h3>
+
+  <p>
+    Pijat menggunakan essential oil premium untuk relaksasi tubuh.
+  </p>
+
+  <div class="price">Rp180.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/spa_aromatherapy.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Aromatherapy Massage',180000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+ <img src="../assets/img/hot.jpg"
+         alt="Hot Stone Therapy"
+         class="product-image">
+
+  <h3>Hot Stone Therapy</h3>
+
+  <p>
+    Terapi batu hangat premium untuk relaksasi maksimal.
+  </p>
+
+  <div class="price">Rp220.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/spa_hot.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Hot Stone Therapy',220000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- WELLNESS -->
+
+<div class="product-card">
+ <img src="../assets/img/complete.jpg"
+         alt="Complete Wellness Package"
+         class="product-image">
+
+  <h3>Complete Wellness Package</h3>
+
+  <p>
+    Yoga, spa dan aromatherapy dalam satu paket lengkap.
+  </p>
+
+  <div class="price">Rp250.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/wellness_complete.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Complete Wellness Package',250000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+
+ <img src="../assets/img/stress.jpg"
+         alt="Stress Recovery Program"
+         class="product-image">
+
+  <h3>Stress Recovery Program</h3>
+
+  <p>
+    Program wellness untuk membantu mengurangi stres dan kelelahan.
+  </p>
+
+  <div class="price">Rp280.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/wellness_stress.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Stress Recovery Program',280000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+
+   <img src="../assets/img/mind.jpg"
+         alt="Mind & Body Therapy"
+         class="product-image">
+
+  <h3>Mind & Body Therapy</h3>
+
+  <p>
+    Terapi relaksasi untuk kesehatan fisik dan mental secara menyeluruh.
+  </p>
+
+  <div class="price">Rp320.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/wellness_mind.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Mind & Body Therapy',320000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<!-- BEAUTY -->
+
+<div class="product-card">
+
+   <img src="../assets/img/facial.jpg"
+         alt="Facial Beauty Care"
+         class="product-image">
+
+  <h3>Facial Beauty Care</h3>
+
+  <p>
+    Perawatan wajah premium untuk menjaga kesehatan kulit.
+  </p>
+
+  <div class="price">Rp180.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/beauty_facial.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Facial Beauty Care',180000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+
+   <img src="../assets/img/hair.jpg"
+         alt="Hair Spa Treatment"
+         class="product-image">
+
+  <h3>Hair Spa Treatment</h3>
+
+  <p>
+    Perawatan rambut profesional agar lebih sehat dan berkilau.
+  </p>
+
+  <div class="price">Rp150.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/beauty_hair.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Hair Spa Treatment',150000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+
+<div class="product-card">
+
+   <img src="../assets/img/manicure.jpg"
+         alt="Manicure & Pedicure"
+         class="product-image">
+
+  <h3>Manicure & Pedicure</h3>
+
+  <p>
+    Perawatan kuku tangan dan kaki untuk menjaga penampilan.
+  </p>
+
+  <div class="price">Rp120.000</div>
+
+  <div class="product-action">
+
+    <a href="detail/beauty_manicure.html" class="detail-btn">
+      Detail
+    </a>
+
+    <button
+      class="cart-btn"
+      onclick="tambahKeranjang('Manicure & Pedicure',120000)"
+    >
+      🛒
+    </button>
+
+  </div>
+
+</div>
+    </section>
+
+    <footer>© 2026 ZENIS Wellness Marketplace</footer>
+
+    <script src="../assets/js/keranjang.js"></script>
+  </body>
+</html>

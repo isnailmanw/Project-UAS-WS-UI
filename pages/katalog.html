@@ -1,0 +1,291 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Layanan - ZENIS</title>
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/katalog.css" />
+
+  </head>
+
+  <body>
+    
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+      <div class="logo">ZEN<span>IS</span></div>
+
+      <ul>
+        <li>
+          <a href="dashboard_user.html"> Dashboard </a>
+        </li>
+
+        <li>
+          <a href="katalog.html" class="active"> Katalog </a>
+        </li>
+
+        <li>
+          <a href="keranjang.html"> Keranjang </a>
+        </li>
+
+        <li>
+          <a href="history.html"> History </a>
+        </li>
+
+        <li>
+          <a href="profil.html"> Profil </a>
+        </li>
+
+        <li>
+          <a href="login.html"> Logout </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+      <!-- HEADER -->
+
+      <div class="catalog-header">
+        <h1>Katalog Layanan Wellness</h1>
+
+        <p>
+          Pilih layanan wellness terbaik untuk membantu menjaga kesehatan tubuh,
+          pikiran, dan keseimbangan hidup Anda.
+        </p>
+      </div>
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+        <input type="text" placeholder="Cari layanan..." />
+
+        <button>Cari</button>
+      </div>
+
+      <!-- FILTER -->
+
+      <div class="filter-section">
+        <button class="filter-btn active-filter">Semua</button>
+
+        <button class="filter-btn">Yoga</button>
+
+        <button class="filter-btn">Spa</button>
+
+        <button class="filter-btn">Wellness</button>
+
+        <button class="filter-btn">Beauty</button>
+      </div>
+
+      <!-- KATALOG -->
+
+      <div class="catalog-wrapper">
+        <!-- YOGA -->
+
+        <div class="wellness-card">
+          <div class="wellness-image green-bg">🧘</div>
+
+          <div class="wellness-content">
+            <div class="top-info">
+              <span class="category"> Yoga Class </span>
+
+              <span class="rating"> ⭐ 4.9 </span>
+            </div>
+
+            <h3>Beginner Yoga Class</h3>
+
+            <p class="location">🧘 Yoga untuk Pemula</p>
+
+            <p class="description">
+              Kelas yoga yang dirancang untuk membantu meningkatkan
+              fleksibilitas, keseimbangan tubuh, dan ketenangan pikiran.
+            </p>
+
+            <div class="service-tags">
+              <span>Yoga</span>
+              <span>Beginner</span>
+              <span>Relaxation</span>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                <small>Mulai dari</small>
+
+                <h4>Rp95.000</h4>
+              </div>
+
+              <div class="card-actions">
+                <a href="detail_yoga.html" class="detail-btn"> Detail </a>
+
+                <button
+                  class="cart-btn"
+                  onclick="tambahKeranjang('Beginner Yoga Class', 95000)"
+                >
+                  🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPA -->
+
+        <div class="wellness-card">
+          <div class="wellness-image purple-bg">💆</div>
+
+          <div class="wellness-content">
+            <div class="top-info">
+              <span class="category"> Spa Treatment </span>
+
+              <span class="rating"> ⭐ 4.8 </span>
+            </div>
+
+            <h3>Relaxation Massage</h3>
+
+            <p class="location">💆 Spa & Massage</p>
+
+            <p class="description">
+              Membantu mengurangi ketegangan otot, meningkatkan relaksasi tubuh,
+              dan mengembalikan energi setelah aktivitas.
+            </p>
+
+            <div class="service-tags">
+              <span>Spa</span>
+              <span>Massage</span>
+              <span>Relax</span>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                <small>Mulai dari</small>
+
+                <h4>Rp150.000</h4>
+              </div>
+
+              <div class="card-actions">
+                <a href="detail_spa.html" class="detail-btn"> Detail </a>
+
+                <button
+                  class="cart-btn"
+                  onclick="tambahKeranjang('Relaxation Massage', 150000)"
+                >
+                  🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WELLNESS -->
+
+        <div class="wellness-card">
+          <div class="wellness-image yellow-bg">🌿</div>
+
+          <div class="wellness-content">
+            <div class="top-info">
+              <span class="category"> Wellness Package </span>
+
+              <span class="rating"> ⭐ 5.0 </span>
+            </div>
+
+            <h3>Complete Wellness Package</h3>
+
+            <p class="location">🌿 Paket Lengkap Wellness</p>
+
+            <p class="description">
+              Paket lengkap yang menggabungkan yoga, aromatherapy, dan spa
+              treatment dalam satu sesi relaksasi.
+            </p>
+
+            <div class="service-tags">
+              <span>Wellness</span>
+              <span>Aromatherapy</span>
+              <span>Premium</span>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                <small>Mulai dari</small>
+
+                <h4>Rp250.000</h4>
+              </div>
+
+              <div class="card-actions">
+                <a href="detail_wellness.html" class="detail-btn"> Detail </a>
+
+                <button
+                  class="cart-btn"
+                  onclick="tambahKeranjang('Complete Wellness Package', 250000)"
+                >
+                  🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEAUTY -->
+
+        <div class="wellness-card">
+          <div class="wellness-image blue-bg">✨</div>
+
+          <div class="wellness-content">
+            <div class="top-info">
+              <span class="category"> Beauty Treatment </span>
+
+              <span class="rating"> ⭐ 4.9 </span>
+            </div>
+
+            <h3>Facial Beauty Care</h3>
+
+            <p class="location">✨ Perawatan Kecantikan</p>
+
+            <p class="description">
+              Membantu menjaga kesehatan kulit, meningkatkan rasa percaya diri,
+              dan memberikan perawatan wajah premium.
+            </p>
+
+            <div class="service-tags">
+              <span>Beauty</span>
+              <span>Facial</span>
+              <span>Skin Care</span>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                <small>Mulai dari</small>
+
+                <h4>Rp180.000</h4>
+              </div>
+
+              <div class="card-actions">
+                <a href="detail_beauty.html" class="detail-btn"> Detail </a>
+
+                <button
+                  class="cart-btn"
+                  onclick="tambahKeranjang('Facial Beauty Care', 180000)"
+                >
+                  🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../assets/js/keranjang.js"></script>
+    
+  </body>
+</html>

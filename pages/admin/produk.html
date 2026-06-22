@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kelola Produk | ZENIS</title>
+
+    <link rel="stylesheet" href="../../assets/css/produk.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Kelola Produk</h1>
+
+          <p>Kelola seluruh layanan wellness ZENIS</p>
+        </div>
+
+        <a href="dashboard_admin.html" class="dashboard-btn"> Dashboard </a>
+      </div>
+
+      <div class="form-card">
+        <h2>Tambah Produk</h2>
+
+        <form id="produkForm">
+          <div class="form-grid">
+            <input type="text" id="nama" placeholder="Nama Produk" required />
+
+            <select id="kategori">
+              <option>Yoga</option>
+              <option>Spa</option>
+              <option>Wellness</option>
+              <option>Beauty</option>
+            </select>
+
+            <input type="text" id="icon" placeholder="Icon (🧘)" />
+
+            <input type="number" id="harga" placeholder="Harga" required />
+
+            <input type="text" id="rating" placeholder="Rating" />
+
+            <input type="text" id="durasi" placeholder="Durasi" />
+
+            <input type="text" id="kapasitas" placeholder="Kapasitas" />
+
+            <input
+              type="text"
+              id="infoLabel"
+              placeholder="Level / Terapis / Program"
+            />
+
+            <input
+              type="text"
+              id="infoValue"
+              placeholder="Pemula / Profesional"
+            />
+          </div>
+
+          <textarea
+            id="deskripsi"
+            rows="5"
+            placeholder="Deskripsi Produk"
+          ></textarea>
+
+          <h3>Benefits</h3>
+
+          <input type="text" id="benefit1" placeholder="Benefit 1" />
+          <input type="text" id="benefit2" placeholder="Benefit 2" />
+          <input type="text" id="benefit3" placeholder="Benefit 3" />
+          <input type="text" id="benefit4" placeholder="Benefit 4" />
+
+          <h3>Fasilitas</h3>
+
+          <input type="text" id="fasilitas1" placeholder="Fasilitas 1" />
+          <input type="text" id="fasilitas2" placeholder="Fasilitas 2" />
+          <input type="text" id="fasilitas3" placeholder="Fasilitas 3" />
+          <input type="text" id="fasilitas4" placeholder="Fasilitas 4" />
+
+          <button type="submit" class="btn-save">Simpan Produk</button>
+        </form>
+      </div>
+
+      <div class="table-card">
+        <h2>Daftar Produk</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Produk</th>
+              <th>Kategori</th>
+              <th>Harga</th>
+              <th>Rating</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="produkTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../../assets/js/produk.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Admin | ZENIS</title>
+
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="admin-container">
+      <header class="admin-header">
+        <div>
+          <h1>Dashboard Admin</h1>
+          <p>Kelola seluruh aktivitas ZENIS Wellness Marketplace</p>
+        </div>
+
+        <div class="nav-right">
+
+          <span class="admin-user">Admin</span>
+
+          <a href="login.html" class="logout-btn">Logout</a>
+        </div>
+      </header>
+
+      <section class="hero-admin">
+        <div class="hero-content">
+          <span>ZENIS ADMIN PANEL</span>
+
+          <h2>Kelola Artikel, Produk, Pengguna dan Transaksi</h2>
+
+          <p>Semua data marketplace dapat dikelola dari satu dashboard.</p>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3 id="totalArtikel">0</h3>
+          <p>Artikel</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="totalProduk">0</h3>
+          <p>Produk</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="totalUser">0</h3>
+          <p>Pengguna</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="totalTransaksi">0</h3>
+          <p>Transaksi</p>
+        </div>
+      </section>
+
+      <section class="quick-actions">
+        <a href="artikel.html" class="action-btn"> Kelola Artikel </a>
+
+        <a href="produk.html" class="action-btn"> Kelola Produk </a>
+
+        <a href="pengguna.html" class="action-btn"> Kelola Pengguna </a>
+
+        <a href="transaksi.html" class="action-btn"> Kelola Transaksi </a>
+      </section>
+
+      <section class="content-grid">
+        <div class="content-card">
+          <h3>Artikel Terbaru</h3>
+
+          <div id="artikelTerbaru">
+            <p class="empty">Belum ada artikel.</p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3>Aktivitas Sistem</h3>
+
+          <div class="activity">
+            <p>✓ Dashboard aktif</p>
+            <p>✓ Login Admin berhasil</p>
+            <p>✓ Sistem berjalan normal</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // =========================
+      // AMBIL DATA LOCAL STORAGE
+      // =========================
+
+      const artikel = JSON.parse(localStorage.getItem("zenis_articles")) || [];
+
+      const produkDefault = 12;
+
+      const produkCustom =
+        JSON.parse(localStorage.getItem("zenis_products")) || [];
+
+      const totalProduk = produkDefault + produkCustom.length;
+
+      document.getElementById("totalProduk").textContent = totalProduk;
+
+      const users = JSON.parse(localStorage.getItem("zenis_users")) || [];
+
+      document.getElementById("totalUser").textContent = users.length;
+
+      const transaksi =
+        JSON.parse(localStorage.getItem("historyTransaksi")) || [];
+
+      document.getElementById("totalTransaksi").textContent = transaksi.length;
+
+      // =========================
+      // TOTAL DATA
+      // =========================
+
+      document.getElementById("totalArtikel").textContent = artikel.length;
+
+      document.getElementById("totalProduk").textContent = produk.length;
+
+      document.getElementById("totalUser").textContent = users.length;
+
+      document.getElementById("totalTransaksi").textContent = transaksi.length;
+
+      // =========================
+      // ARTIKEL TERBARU
+      // =========================
+
+      const artikelContainer = document.getElementById("artikelTerbaru");
+
+      if (artikel.length > 0) {
+        artikelContainer.innerHTML = "";
+
+        artikel
+          .slice()
+          .reverse()
+          .slice(0, 5)
+          .forEach((item) => {
+            artikelContainer.innerHTML += `
+
+        <div class="artikel-item">
+
+          <h4>
+            ${item.judul || "-"}
+          </h4>
+
+          <span>
+            ${item.tanggal || "-"}
+          </span>
+
+        </div>
+
+        `;
+          });
+      } else {
+        artikelContainer.innerHTML = `
+      <p class="empty">
+        Belum ada artikel.
+      </p>
+    `;
+      }
+    </script>
+  </body>
+</html>
