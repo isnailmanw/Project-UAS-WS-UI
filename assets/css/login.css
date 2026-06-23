@@ -225,3 +225,22 @@ body {
 .demo-login small {
   color: #666;
 }
+
+.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ffffff;
+  color: #9c6dff;
+  text-decoration: none;
+  border: 2px solid #9c6dff;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover {
+  background: #9c6dff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
