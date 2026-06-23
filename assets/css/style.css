@@ -1016,30 +1016,39 @@ footer {
 ===================== */
 
 @media (max-width: 900px) {
-  .hero-text h1 {
-    font-size: 48px;
-  }
   .hero {
     flex-direction: column;
     padding-top: 120px;
   }
+
   .hero-image {
-    display: none;
+    display: flex;
+    order: -1;
   }
-  .section-title h2 {
-    font-size: 36px;
+
+  .logo-wrapper {
+    width: 220px;
+    height: 220px;
   }
-  .cta h2 {
-    font-size: 36px;
+
+  .logo-box {
+    width: 140px;
+    height: 140px;
+    border-radius: 30px;
   }
-  .catalog-header h1 {
-    font-size: 46px;
+
+  .zenis-icon {
+    font-size: 60px;
   }
-  .catalog-header p {
-    width: 100%;
+
+  .top-circle {
+    width: 70px;
+    height: 70px;
   }
-  .detail-content-section h1 {
-    font-size: 42px;
+
+  .left-circle {
+    width: 80px;
+    height: 80px;
   }
 }
 
