@@ -51,4 +51,8 @@ function selesaikanPembayaran() {
   window.location.href = "detail_pembayaran.html";
 }
 
+function kembaliKeKeranjang() {
+  window.location.href = "keranjang.html";
+}
+
 loadPayment();
