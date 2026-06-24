@@ -230,16 +230,23 @@ body {
 
 .summary-row {
   display: flex;
-
   justify-content: space-between;
-
+  align-items: center; /* biar sejajar vertikal */
+  gap: 12px;
   margin-bottom: 25px;
+}
+
+.summary-row span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
 }
 
 .summary-row strong {
   color: #b679ff;
-
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .pay-btn {
@@ -287,8 +294,16 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .summary-box {
-    position: static;
+  .summary-row {
+    align-items: center;
+  }
+
+  .summary-row span {
+    font-size: 16px;
+  }
+
+  .summary-row strong {
+    font-size: 20px;
   }
 
   .navbar {
