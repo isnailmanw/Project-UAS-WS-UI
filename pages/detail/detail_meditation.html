@@ -4,25 +4,21 @@
   <head>
     <meta charset="UTF-8" />
 
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Meditation Session</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
-    
   </head>
 
   <body>
     <nav class="navbar">
-      
       <div class="logo">ZEN<span>IS</span></div>
 
       <div class="nav-menu">
@@ -52,8 +48,6 @@
 
         <div class="product-info">
           <h1>Meditation Session</h1>
-
-          <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
 
           <div class="price">Rp125.000</div>
 
@@ -86,21 +80,41 @@
               <span>Rating</span>
               <strong>4.8/5</strong>
             </div>
+
+            <div class="rating">
+              <span class="star">★★★★★</span>
+
+              4.8
+
+              <span>(125 Ulasan)</span>
+            </div>
           </div>
 
           <div class="action-buttons">
             <button
               class="cart-btn"
-              onclick="tambahKeranjang('Meditation Session', 125000)"
+              onclick="
+                tambahKeranjang(
+                  'Meditation Session',
+
+                  125000,
+
+                  '../assets/img/meditation.jpg',
+
+                  'Yoga',
+
+                  '75 Menit',
+                )
+              "
             >
-              🛒 Tambah Keranjang
+              Tambah Keranjang
             </button>
 
             <button
               class="buy-btn"
               onclick="pesanSekarang('Meditation Session', 125000)"
             >
-              ⚡ Pesan Sekarang
+              Pesan Sekarang
             </button>
           </div>
         </div>
@@ -140,6 +154,5 @@
     </div>
 
     <script src="../../assets/js/keranjang.js"></script>
-   
   </body>
 </html>

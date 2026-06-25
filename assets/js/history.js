@@ -1,86 +1,90 @@
 function loadHistory() {
-  let history = JSON.parse(localStorage.getItem("historyTransaksi")) || [];
+  const history = JSON.parse(localStorage.getItem("historyTransaksi")) || [];
 
-  let container = document.getElementById("history-list");
+  const tbody = document.getElementById("history-body");
+
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
 
   if (history.length === 0) {
-    container.innerHTML = `
-    <div class="empty-state">
+    tbody.innerHTML = `
+      <tr>
 
-        <h2>
-            Belum Ada Riwayat
-        </h2>
+        <td colspan="7" class="empty-history">
 
-        <p>
-            Anda belum pernah melakukan transaksi.
-        </p>
+          <h3>Belum Ada Riwayat Booking</h3>
 
-    </div>
+          <p>Transaksi yang berhasil dibayar akan muncul di sini.</p>
+
+        </td>
+
+      </tr>
     `;
 
     return;
   }
 
-  history.reverse().forEach((transaksi) => {
-    let layanan = "";
+  const reversedHistory = history.slice().reverse();
 
-    transaksi.items.forEach((item) => {
-      layanan += `
-        <div class="service-item">
-
-            <span>
-                ${item.nama}
-            </span>
-
-            <strong>
-                Rp${item.harga.toLocaleString()}
-            </strong>
-
-        </div>
-        `;
+  reversedHistory.forEach(function (transaksi) {
+    const originalIndex = history.findIndex(function (item) {
+      return item.id === transaksi.id;
     });
 
-    container.innerHTML += `
+    tbody.innerHTML += `
+      <tr>
 
-    <div class="history-card">
+        <td>${transaksi.id}</td>
 
-        <div class="history-top">
+        <td>${transaksi.tanggal}</td>
 
-            <h3>
-                Transaksi Berhasil
-            </h3>
+        <td>${transaksi.metode.toUpperCase()}</td>
 
-            <span class="status">
-                ${transaksi.status}
-            </span>
+        <td>
+          Rp${Number(transaksi.total).toLocaleString("id-ID")}
+        </td>
 
-        </div>
+        <td>
 
-        ${layanan}
+          <span class="status-badge">
 
-        <div class="history-info">
+            ${transaksi.status}
 
-            <p>
-                <strong>Tanggal:</strong>
-                ${transaksi.tanggal}
-            </p>
+          </span>
 
-            <p>
-                <strong>Metode:</strong>
-                ${transaksi.metode.toUpperCase()}
-            </p>
+        </td>
 
-            <p class="total">
-                Total:
-                Rp${transaksi.total.toLocaleString()}
-            </p>
+        <td>
 
-        </div>
+          ${transaksi.items.length} Layanan
 
-    </div>
+        </td>
 
+        <td>
+
+          <button
+            class="detail-btn"
+            onclick="lihatDetail(${originalIndex})"
+          >
+
+            Detail
+
+          </button>
+
+        </td>
+
+      </tr>
     `;
   });
 }
 
-loadHistory();
+function lihatDetail(index) {
+  localStorage.setItem("selectedHistory", index);
+
+  window.location.href = "detail_pesanan.html";
+}
+
+window.onload = function () {
+  loadHistory();
+};

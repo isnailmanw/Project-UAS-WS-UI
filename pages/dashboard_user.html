@@ -9,13 +9,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/css/dashboard.css" />
+
+    <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
+
 
   <body>
     <!-- NAVBAR -->
@@ -33,7 +35,9 @@ ZEN<span>IS</span>
 </div>
 
 <div class="nav-right">
-    <a href="keranjang.html" class="icon-btn">🛒</a>
+    <a href="keranjang.html" class="icon-btn">
+    <i class="bi bi-cart4"></i>
+</a>
 
     <span class="user-label">User</span>
 
@@ -45,43 +49,82 @@ ZEN<span>IS</span>
 
     <section class="hero">
       <div class="hero-content">
-        <span class="hero-badge"> 🌿 Wellness Marketplace </span>
 
-        <h1>Temukan Layanan Wellness Terbaik untuk Tubuh dan Pikiran</h1>
+<div class="hero-text">
 
-        <p>
-          ZENIS menyediakan layanan yoga, spa, wellness package dan beauty
-          treatment yang dapat membantu meningkatkan kualitas hidup Anda.
-        </p>
+<span class="hero-badge">
 
-        <a href="#layanan" class="hero-btn"> Jelajahi Katalog </a>
-      </div>
+Wellness For A Better You
+
+</span>
+
+<h1>
+
+Temukan layanan wellness terbaik
+untuk tubuh dan pikiran
+yang lebih sehat.
+
+</h1>
+
+<p>
+
+Yoga, Spa, Beauty
+semua ada di ZENIS.
+
+</p>
+
+<a href="#layanan" class="hero-btn">
+
+Jelajahi Layanan 
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="../assets/img/heroo.jpg"
+alt="Yoga">
+
+</div>
+
+</div>
     </section>
 
     <!-- KATEGORI -->
 
     <section class="kategori">
-      <div class="kategori-card">
-        🧘
-        <span>Yoga</span>
-      </div>
 
-      <div class="kategori-card">
-        💆
-        <span>Spa</span>
-      </div>
+    <div class="section-title">
+        <h2>Kategori Layanan</h2>
+    </div>
 
-      <div class="kategori-card">
-        🌿
-        <span>Wellness</span>
-      </div>
+    <div class="kategori-grid">
 
-      <div class="kategori-card">
-        ✨
-        <span>Beauty</span>
-      </div>
-    </section>
+        <div class="kategori-card">
+            <h3>Yoga</h3>
+            <p>Tingkatkan fleksibilitas dan ketenangan pikiran.</p>
+        </div>
 
+        <div class="kategori-card">
+            <h3>Spa</h3>
+            <p>Relaksasi tubuh dan pikiran secara menyeluruh.</p>
+        </div>
+
+        <div class="kategori-card">
+            <h3>Wellness</h3>
+            <p>Program lengkap untuk kesehatan tubuh dan pikiran.</p>
+        </div>
+
+        <div class="kategori-card">
+            <h3>Beauty</h3>
+            <p>Perawatan terbaik untuk rasa percaya diri.</p>
+        </div>
+
+    </div>
+
+</section>
     <!-- LAYANAN -->
 
     <section id="layanan" class="layanan-section">
@@ -96,6 +139,7 @@ ZEN<span>IS</span>
          class="product-image">
 
           <h3>Beginner Yoga Class</h3>
+          
 
           <p>Kelas yoga dasar untuk pemula.</p>
 
@@ -108,7 +152,7 @@ ZEN<span>IS</span>
               class="cart-btn"
               onclick="tambahKeranjang('Beginner Yoga Class', 95000)"
             >
-              🛒
+              <i class="bi bi-cart4"></i>
             </button>
           </div>
         </div>
@@ -131,7 +175,7 @@ ZEN<span>IS</span>
               class="cart-btn"
               onclick="tambahKeranjang('Meditation Yoga', 125000)"
             >
-              🛒
+             <i class="bi bi-cart4"></i>
             </button>
           </div>
         </div>
@@ -154,7 +198,7 @@ ZEN<span>IS</span>
               class="cart-btn"
               onclick="tambahKeranjang('Private Yoga Session', 250000)"
             >
-              🛒
+              <i class="bi bi-cart4"></i>
             </button>
           </div>
         </div>
@@ -185,7 +229,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Relaxation Massage',150000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -216,7 +260,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Aromatherapy Massage',180000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -246,7 +290,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Hot Stone Therapy',220000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -280,7 +324,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Complete Wellness Package',250000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -311,7 +355,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Stress Recovery Program',280000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -342,7 +386,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Mind & Body Therapy',320000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -375,7 +419,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Facial Beauty Care',180000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -406,7 +450,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Hair Spa Treatment',150000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>
@@ -437,7 +481,7 @@ ZEN<span>IS</span>
       class="cart-btn"
       onclick="tambahKeranjang('Manicure & Pedicure',120000)"
     >
-      🛒
+      <i class="bi bi-cart4"></i>
     </button>
 
   </div>

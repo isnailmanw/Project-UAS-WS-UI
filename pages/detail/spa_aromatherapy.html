@@ -4,7 +4,6 @@
   <head>
     <meta charset="UTF-8" />
 
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Aromatherapy Massage</title>
@@ -12,17 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
-    
   </head>
 
   <body>
     <nav class="navbar">
-      
       <div class="logo">ZEN<span>IS</span></div>
 
       <div class="nav-menu">
@@ -42,7 +39,7 @@
       <div class="detail-wrapper">
         <!-- GAMBAR -->
 
-         <img
+        <img
           class="product-image"
           src="../../assets/img/aromatherapy.jpg"
           alt="Aromatherapy Massage"
@@ -52,8 +49,6 @@
 
         <div class="product-info">
           <h1>Aromatherapy Massage</h1>
-
-          <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
 
           <div class="price">Rp180.000</div>
 
@@ -86,21 +81,41 @@
               <span>Rating</span>
               <strong>4.9/5</strong>
             </div>
+
+            <div class="rating">
+              <span class="star">★★★★★</span>
+
+              4.9
+
+              <span>(127 Ulasan)</span>
+            </div>
           </div>
 
           <div class="action-buttons">
             <button
               class="cart-btn"
-              onclick="tambahKeranjang('Aromatherapy Massage', 180000)"
+              onclick="
+                tambahKeranjang(
+                  'Aromatherapy Massage',
+
+                  180000,
+
+                  '../assets/img/armoatherapy.jpg',
+
+                  'Spa',
+
+                  '75 Menit',
+                )
+              "
             >
-              🛒 Tambah Keranjang
+              Tambah Keranjang
             </button>
 
             <button
               class="buy-btn"
               onclick="pesanSekarang('Aromatherapy Massage', 180000)"
             >
-              ⚡ Pesan Sekarang
+              Pesan Sekarang
             </button>
           </div>
         </div>
@@ -140,6 +155,5 @@
     </div>
 
     <script src="../../assets/js/keranjang.js"></script>
-    
   </body>
 </html>

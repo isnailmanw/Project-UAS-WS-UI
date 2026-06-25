@@ -2,7 +2,6 @@
 
 <html lang="id">
   <head>
-    
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,36 +11,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="../assets/css/detail_pembayaran.css" />
-    
   </head>
 
   <body>
+    <!-- NAVBAR -->
+
     <nav class="navbar">
-      
       <div class="logo">ZEN<span>IS</span></div>
-      
     </nav>
 
-    <div class="container">
-      
-      <div class="payment-card">
+    <!-- CONTENT -->
+
+    <main class="container">
+      <section class="payment-card">
         <h1>Selesaikan Pembayaran</h1>
 
-        <p class="subtitle">Gunakan metode pembayaran yang telah Anda pilih.</p>
+        <p class="subtitle">
+          Silakan lakukan pembayaran menggunakan metode yang telah Anda pilih.
+        </p>
+
+        <!-- Seluruh isi metode pembayaran dan ringkasan
+             akan dibuat otomatis oleh detail_pembayaran.js -->
 
         <div id="payment-detail"></div>
 
         <button class="finish-btn" onclick="konfirmasiPembayaran()">
-          Saya Sudah Membayar
+          Konfirmasi Pembayaran
         </button>
-      </div>
-      
-    </div>
+      </section>
+    </main>
 
     <script src="../assets/js/detail_pembayaran.js"></script>
   </body>

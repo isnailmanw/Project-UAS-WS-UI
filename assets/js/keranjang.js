@@ -1,47 +1,133 @@
-function tambahKeranjang(nama, harga) {
+function tambahKeranjang(nama, harga, gambar = "", kategori = "", durasi = "") {
+  let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-    let keranjang =
-        JSON.parse(
-            localStorage.getItem("keranjang")
-        ) || [];
+  keranjang.push({
+    nama,
+    harga,
 
-    keranjang.push({
-        nama: nama,
-        harga: harga
-    });
+    gambar: gambar || getImage(nama),
 
-    localStorage.setItem(
-        "keranjang",
-        JSON.stringify(keranjang)
-    );
+    kategori: kategori || getKategori(nama),
 
-    alert(
-        nama + " berhasil ditambahkan ke keranjang!"
-    );
+    durasi: durasi || getDurasi(nama),
+  });
 
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+  alert(nama + " berhasil ditambahkan ke keranjang!");
+}
+
+function getImage(nama) {
+  switch (nama) {
+    case "Beginner Yoga Class":
+      return "../assets/img/yoga.jpg";
+
+    case "Meditation Yoga":
+      return "../assets/img/meditation.jpg";
+
+    case "Private Yoga Session":
+      return "../assets/img/privat.jpg";
+
+    case "Relaxation Massage":
+      return "../assets/img/relaxation.jpg";
+
+    case "Aromatherapy Massage":
+      return "../assets/img/aromatherapy.jpg";
+
+    case "Hot Stone Therapy":
+      return "../assets/img/hot.jpg";
+
+    case "Complete Wellness Package":
+      return "../assets/img/complete.jpg";
+
+    case "Stress Recovery Program":
+      return "../assets/img/stress.jpg";
+
+    case "Mind & Body Therapy":
+      return "../assets/img/mind.jpg";
+
+    case "Facial Beauty Care":
+      return "../assets/img/facial.jpg";
+
+    case "Hair Spa Treatment":
+      return "../assets/img/hair.jpg";
+
+    case "Manicure & Pedicure":
+      return "../assets/img/manicure.jpg";
+
+    default:
+      return "../assets/img/default.jpg";
+  }
+}
+
+function getKategori(nama) {
+  if (nama.includes("Yoga")) return "Yoga";
+
+  if (nama.includes("Massage") || nama.includes("Stone")) return "Spa";
+
+  if (
+    nama.includes("Wellness") ||
+    nama.includes("Therapy") ||
+    nama.includes("Stress")
+  )
+    return "Wellness";
+
+  return "Beauty";
+}
+
+function getDurasi(nama) {
+  switch (nama) {
+    case "Beginner Yoga Class":
+      return "60 Menit";
+
+    case "Meditation Yoga":
+      return "60 Menit";
+
+    case "Private Yoga Session":
+      return "90 Menit";
+
+    case "Relaxation Massage":
+      return "60 Menit";
+
+    case "Aromatherapy Massage":
+      return "90 Menit";
+
+    case "Hot Stone Therapy":
+      return "90 Menit";
+
+    case "Complete Wellness Package":
+      return "120 Menit";
+
+    case "Stress Recovery Program":
+      return "120 Menit";
+
+    case "Mind & Body Therapy":
+      return "90 Menit";
+
+    case "Facial Beauty Care":
+      return "60 Menit";
+
+    case "Hair Spa Treatment":
+      return "75 Menit";
+
+    case "Manicure & Pedicure":
+      return "60 Menit";
+
+    default:
+      return "-";
+  }
 }
 
 function tampilKeranjang() {
+  let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-    let keranjang =
-        JSON.parse(
-            localStorage.getItem("keranjang")
-        ) || [];
+  let container = document.getElementById("keranjang-list");
 
-    let container =
-        document.getElementById(
-            "keranjang-list"
-        );
+  container.innerHTML = "";
 
-    let total = 0;
+  keranjang.forEach(function (item, index) {
+    container.innerHTML += `
 
-    container.innerHTML = "";
-
-    keranjang.forEach(
-        function(item,index){
-
-
-            container.innerHTML += `
 <div class="cart-item">
 
     <div class="cart-left">
@@ -53,140 +139,168 @@ function tampilKeranjang() {
             onchange="hitungTotal()"
         >
 
-        <div>
+        <img
+            src="${
+              item.gambar && item.gambar !== ""
+                ? item.gambar
+                : getImage(item.nama)
+            }"
+            class="cart-image"
+            alt="${item.nama}"
+        >
+
+        <div class="cart-info">
 
             <h3>${item.nama}</h3>
 
-            <p>
+            <p>${
+              item.kategori && item.kategori !== ""
+                ? item.kategori
+                : getKategori(item.nama)
+            }</p>
+
+            <span>${
+              item.durasi && item.durasi !== ""
+                ? item.durasi
+                : getDurasi(item.nama)
+            }</span>
+
+            <div class="cart-price">
                 Rp${item.harga.toLocaleString()}
-            </p>
+            </div>
 
         </div>
 
     </div>
 
-    <button onclick="hapusItem(${index})">
+    <button
+        class="delete-btn"
+        onclick="hapusItem(${index})"
+    >
         Hapus
     </button>
 
 </div>
+
 `;
-        }
-    );
+  });
 
-    hitungTotal();
+  hitungTotal();
+}
+function hapusItem(index) {
+  let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
+  keranjang.splice(index, 1);
+
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+  tampilKeranjang();
 }
 
-function hapusItem(index){
+function hitungTotal() {
+  let subtotal = 0;
 
-    let keranjang =
-        JSON.parse(
-            localStorage.getItem("keranjang")
-        ) || [];
-
-    keranjang.splice(index,1);
-
-    localStorage.setItem(
-        "keranjang",
-        JSON.stringify(keranjang)
-    );
-
-    tampilKeranjang();
-
-}
-
-function hitungTotal(){
-
-    let total = 0;
-
-    document
-        .querySelectorAll(".item-check")
-        .forEach(function(item){
-
-            if(item.checked){
-
-                total += parseInt(
-                    item.dataset.harga
-                );
-
-            }
-
-        });
-
-    document.getElementById(
-        "total-harga"
-    ).innerText =
-        "Rp" + total.toLocaleString();
-
-}
-
-function checkout(){
-
-    let keranjang =
-        JSON.parse(
-            localStorage.getItem("keranjang")
-        ) || [];
-
-    let selectedItems = [];
-
-    document
-        .querySelectorAll(".item-check")
-        .forEach(function(check,index){
-
-            if(check.checked){
-
-                selectedItems.push(
-                    keranjang[index]
-                );
-
-            }
-
-        });
-
-    if(selectedItems.length === 0){
-
-        alert(
-            "Pilih minimal 1 layanan!"
-        );
-
-        return;
-
+  document.querySelectorAll(".item-check").forEach(function (item) {
+    if (item.checked) {
+      subtotal += Number(item.dataset.harga);
     }
+  });
 
-    localStorage.setItem(
-        "selectedItems",
-        JSON.stringify(selectedItems)
-    );
+  const biayaLayanan = subtotal > 0 ? 2500 : 0;
 
-    window.location.href =
-        "pembayaran.html";
+  const total = subtotal + biayaLayanan;
 
+  const subtotalElement = document.getElementById("subtotal");
+
+  if (subtotalElement) {
+    subtotalElement.textContent = "Rp" + subtotal.toLocaleString("id-ID");
+  }
+
+  const biayaElement = document.getElementById("biaya-layanan");
+
+  if (biayaElement) {
+    biayaElement.textContent = "Rp" + biayaLayanan.toLocaleString("id-ID");
+  }
+
+  const totalElement = document.getElementById("total-harga");
+
+  if (totalElement) {
+    totalElement.textContent = "Rp" + total.toLocaleString("id-ID");
+  }
 }
 
-function pesanSekarang(nama, harga){
+function checkout() {
+  const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-    let selectedItems = [];
+  const selectedItems = [];
 
-    selectedItems.push({
-        nama: nama,
-        harga: harga
-    });
+  document.querySelectorAll(".item-check").forEach(function (check, index) {
+    if (check.checked) {
+      const item = keranjang[index];
 
-    localStorage.setItem(
-        "selectedItems",
-        JSON.stringify(selectedItems)
-    );
+      selectedItems.push({
+        nama: item.nama,
 
-    window.location.href =
-        "../pembayaran.html";
+        harga: item.harga,
 
+        gambar: item.gambar || getImage(item.nama),
+
+        kategori: item.kategori || getKategori(item.nama),
+
+        durasi: item.durasi || getDurasi(item.nama),
+      });
+    }
+  });
+
+  if (selectedItems.length === 0) {
+    alert("Pilih minimal 1 layanan!");
+
+    return;
+  }
+
+  localStorage.setItem(
+    "selectedItems",
+
+    JSON.stringify(selectedItems),
+  );
+
+  window.location.href = "pembayaran.html";
 }
 
-if(
-    document.getElementById(
-        "keranjang-list"
-    )
-){
-    tampilKeranjang();
+function pesanSekarang(
+  nama,
+
+  harga,
+
+  gambar = "",
+
+  kategori = "",
+
+  durasi = "",
+) {
+  const selectedItems = [];
+
+  selectedItems.push({
+    nama,
+
+    harga,
+
+    gambar: gambar || getImage(nama),
+
+    kategori: kategori || getKategori(nama),
+
+    durasi: durasi || getDurasi(nama),
+  });
+
+  localStorage.setItem(
+    "selectedItems",
+
+    JSON.stringify(selectedItems),
+  );
+
+  window.location.href = "../pembayaran.html";
+}
+
+if (document.getElementById("keranjang-list")) {
+  tampilKeranjang();
 }

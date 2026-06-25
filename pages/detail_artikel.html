@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -20,25 +21,35 @@
   <body>
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
-
-      <a href="artikel.html" class="back-btn">
-    Kembali ke Artikel
-</a>
     </nav>
 
-    <div class="container">
-      <img id="artikelGambar" class="hero-image" />
+    <main class="container">
+      <div class="breadcrumb">
+        <a href="dashboard_user.html"> Beranda </a>
 
-      <div class="artikel-header">
-        <span id="artikelKategori"></span>
+        <span>/</span>
+
+        <a href="artikel.html"> Artikel </a>
+
+        <span>/</span>
+
+        <span> Detail Artikel </span>
+      </div>
+
+      <header class="article-header">
+        <div id="artikelKategori" class="category"></div>
 
         <h1 id="artikelJudul"></h1>
 
-        <div id="artikelMeta"></div>
+        <div id="artikelMeta" class="article-meta"></div>
+      </header>
+
+      <div class="cover-wrapper">
+        <img id="artikelGambar" class="hero-image" alt="Artikel Wellness" />
       </div>
 
-      <div id="artikelIsi" class="artikel-content"></div>
-    </div>
+      <article id="artikelIsi" class="article-content"></article>
+    </main>
 
     <script src="../assets/js/detail_artikel.js"></script>
   </body>

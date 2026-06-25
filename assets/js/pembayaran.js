@@ -1,38 +1,89 @@
-let totalBayar = 0;
+let subtotal = 0;
+const biayaLayanan = 2500;
 
 function loadPayment() {
-  let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+  const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
-  let container = document.getElementById("payment-items");
+  const container = document.getElementById("payment-items");
+
+  if (!container) return;
 
   container.innerHTML = "";
 
-  totalBayar = 0;
+  subtotal = 0;
 
-  selectedItems.forEach((item) => {
-    totalBayar += item.harga;
+  if (selectedItems.length === 0) {
+    container.innerHTML = `
+            <p>Tidak ada layanan yang dipilih.</p>
+        `;
+
+    updateSummary();
+
+    return;
+  }
+
+  selectedItems.forEach(function (item) {
+    subtotal += Number(item.harga);
 
     container.innerHTML += `
-    <div class="payment-item">
 
-        <span>
-            ${item.nama}
-        </span>
+<div class="payment-item">
 
-        <strong>
-            Rp${item.harga.toLocaleString()}
-        </strong>
+    <img
+        src="${item.gambar}"
+        alt="${item.nama}"
+        class="payment-image"
+    >
+
+    <div class="payment-info">
+
+        <h3>${item.nama}</h3>
+
+        <p>${item.kategori}</p>
+
+        <small>${item.durasi}</small>
 
     </div>
-    `;
+
+    <div class="payment-price">
+
+        Rp${Number(item.harga).toLocaleString("id-ID")}
+
+    </div>
+
+</div>
+
+`;
   });
 
-  document.getElementById("payment-total").innerText =
-    "Rp" + totalBayar.toLocaleString();
+  updateSummary();
+}
+
+function updateSummary() {
+  const total = subtotal > 0 ? subtotal + biayaLayanan : 0;
+
+  const subtotalElement = document.getElementById("subtotal");
+
+  if (subtotalElement) {
+    subtotalElement.textContent = "Rp" + subtotal.toLocaleString("id-ID");
+  }
+
+  const biayaElement = document.getElementById("biaya-layanan");
+
+  if (biayaElement) {
+    biayaElement.textContent =
+      subtotal > 0 ? "Rp" + biayaLayanan.toLocaleString("id-ID") : "Rp0";
+  }
+
+  const totalElement = document.getElementById("payment-total");
+
+  if (totalElement) {
+    totalElement.textContent = "Rp" + total.toLocaleString("id-ID");
+  }
 }
 
 function selesaikanPembayaran() {
-  let metode = document.querySelector('input[name="payment"]:checked');
+  const metode = document.querySelector('input[name="payment"]:checked');
 
   if (!metode) {
     alert("Pilih metode pembayaran terlebih dahulu!");
@@ -40,13 +91,29 @@ function selesaikanPembayaran() {
     return;
   }
 
+  const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+
+  if (selectedItems.length === 0) {
+    alert("Tidak ada layanan yang dipilih.");
+
+    return;
+  }
+
+  const total = subtotal + biayaLayanan;
+
+  const invoice = "INV-" + Date.now();
+
   localStorage.setItem("metodePembayaran", metode.value);
 
-  let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+  localStorage.setItem("subtotalPembayaran", subtotal);
 
-  let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+  localStorage.setItem("biayaLayanan", biayaLayanan);
 
-  let history = JSON.parse(localStorage.getItem("historyTransaksi")) || [];
+  localStorage.setItem("totalPembayaran", total);
+
+  localStorage.setItem("invoice", invoice);
+
+  localStorage.setItem("tanggalTransaksi", new Date().toLocaleString("id-ID"));
 
   window.location.href = "detail_pembayaran.html";
 }
@@ -55,4 +122,7 @@ function kembaliKeKeranjang() {
   window.location.href = "keranjang.html";
 }
 
-loadPayment();
+
+window.onload = function () {
+  loadPayment();
+};

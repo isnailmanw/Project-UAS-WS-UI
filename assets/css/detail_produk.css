@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   background: #f8f7fc;
   color: #2d3348;
 }
@@ -65,9 +65,11 @@ CONTAINER
 ===================== */
 
 .container {
-  width: 85%;
+  max-width: 1200px;
+
   margin: auto;
-  padding: 40px 0 80px;
+
+  padding: 40px 20px 80px;
 }
 
 /* =====================
@@ -84,32 +86,42 @@ DETAIL PRODUK
 }
 
 .product-image {
-  height: 500px;
+  width: 100%;
 
-  background: linear-gradient(135deg, #b679ff, #88d8d0);
+  height: 480px;
 
-  border-radius: 30px;
+  object-fit: cover;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
 
-  font-size: 180px;
+  border: 1px solid #ececec;
 }
 
 .product-info h1 {
-  font-size: 42px;
+  font-size: 36px;
   margin-bottom: 15px;
 }
 
 .rating {
-  color: #f5a623;
-  font-weight: 600;
-  margin-bottom: 15px;
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 15px;
+
+  color: #666;
+}
+
+.star {
+  color: #ffc107;
+
+  font-size: 18px;
 }
 
 .price {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 700;
   color: #b679ff;
   margin-bottom: 25px;
@@ -123,21 +135,24 @@ DETAIL PRODUK
 
 .product-meta {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
 
-  margin-bottom: 30px;
+  gap: 10px 40px;
+
+  margin: 28px 0;
 }
 
 .meta-box {
-  background: white;
+  background: none;
 
-  padding: 18px;
+  border: none;
 
-  border-radius: 15px;
+  padding: 8px 0;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+
+  border-bottom: 1px solid #ececec;
 }
 
 .meta-box span {
@@ -164,7 +179,7 @@ BUTTON
 .cart-btn {
   flex: 1;
 
-  padding: 16px;
+  padding: 15px;
 
   border: 2px solid #b679ff;
 
@@ -172,7 +187,7 @@ BUTTON
 
   color: #b679ff;
 
-  border-radius: 14px;
+  border-radius: 8px;
 
   font-weight: 600;
 
@@ -182,7 +197,7 @@ BUTTON
 .buy-btn {
   flex: 1;
 
-  padding: 16px;
+  padding: 15px;
 
   border: none;
 
@@ -190,7 +205,7 @@ BUTTON
 
   color: white;
 
-  border-radius: 14px;
+  border-radius: 8px;
 
   font-weight: 600;
 
@@ -211,13 +226,14 @@ INFO GRID
 }
 
 .info-card {
-  background: white;
 
-  padding: 30px;
+  border: 1px solid #ececec;
 
-  border-radius: 25px;
+  border-radius: 10px;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 28px;
+
+  box-shadow: none;
 }
 
 .info-card h3 {
@@ -230,8 +246,9 @@ INFO GRID
 }
 
 .info-card li {
-  padding: 10px 0;
-  color: #666;
+  padding: 12px 0;
+
+  border-bottom: 1px solid #f2f2f2;
 }
 
 /* =====================

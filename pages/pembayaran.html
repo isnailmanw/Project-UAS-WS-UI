@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -19,26 +19,37 @@
   </head>
 
   <body>
+    <!-- NAVBAR -->
+
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
     </nav>
+
+    <!-- CONTENT -->
 
     <div class="container">
       <div class="page-header">
         <h1>Pembayaran</h1>
 
-        <p>Periksa kembali layanan yang akan Anda pesan.</p>
+        <p>
+          Periksa kembali layanan yang akan Anda pesan sebelum melanjutkan
+          pembayaran.
+        </p>
       </div>
 
       <div class="payment-layout">
         <!-- KIRI -->
 
-        <div>
+        <div class="payment-left">
+          <!-- PRODUK -->
+
           <div class="card">
             <h2>Layanan Dipilih</h2>
 
             <div id="payment-items"></div>
           </div>
+
+          <!-- METODE -->
 
           <div class="card">
             <h2>Metode Pembayaran</h2>
@@ -49,10 +60,8 @@
                   type="radio"
                   name="payment"
                   value="qris"
-                  onclick="showPaymentInfo()"
                 />
-
-                <span>📱 QRIS</span>
+                <span>QRIS</span>
               </label>
 
               <label class="method-card">
@@ -60,10 +69,8 @@
                   type="radio"
                   name="payment"
                   value="bca"
-                  onclick="showPaymentInfo()"
                 />
-
-                <span>🏦 Transfer BCA</span>
+                <span>Transfer BCA</span>
               </label>
 
               <label class="method-card">
@@ -71,10 +78,8 @@
                   type="radio"
                   name="payment"
                   value="bri"
-                  onclick="showPaymentInfo()"
                 />
-
-                <span>🏦 Transfer BRI</span>
+                <span>Transfer BRI</span>
               </label>
 
               <label class="method-card">
@@ -82,23 +87,35 @@
                   type="radio"
                   name="payment"
                   value="ewallet"
-                  onclick="showPaymentInfo()"
                 />
-
-                <span>💳 E-Wallet</span>
+                <span>E-Wallet</span>
               </label>
             </div>
 
-            <div id="payment-info"></div>
+            
           </div>
         </div>
 
         <!-- KANAN -->
 
-        <div class="summary-box">
+        <aside class="summary-box">
           <h2>Ringkasan Pesanan</h2>
 
-          <div class="summary-row">
+          <div class="summary-item">
+            <span>Subtotal</span>
+
+            <span id="subtotal"> Rp0 </span>
+          </div>
+
+          <div class="summary-item">
+            <span>Biaya Layanan</span>
+
+            <span id="biaya-layanan"> Rp0 </span>
+          </div>
+
+          <hr />
+
+          <div class="summary-total">
             <span>Total Pembayaran</span>
 
             <strong id="payment-total"> Rp0 </strong>
@@ -111,7 +128,7 @@
           <button class="back-btn" onclick="kembaliKeKeranjang()">
             Kembali ke Keranjang
           </button>
-        </div>
+        </aside>
       </div>
     </div>
 

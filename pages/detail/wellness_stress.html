@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -50,8 +50,6 @@
         <div class="product-info">
           <h1>Stress Recovery Program</h1>
 
-          <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
-
           <div class="price">Rp280.000</div>
 
           <p class="description">
@@ -83,21 +81,41 @@
               <span>Rating</span>
               <strong>4.9/5</strong>
             </div>
+
+            <div class="rating">
+              <span class="star">★★★★★</span>
+
+              4.7
+
+              <span>(67 Ulasan)</span>
+            </div>
           </div>
 
           <div class="action-buttons">
             <button
               class="cart-btn"
-              onclick="tambahKeranjang('Stress Recovery Program', 280000)"
+              onclick="
+                tambahKeranjang(
+                  'Stress Recovery Program',
+
+                  280000,
+
+                  '../assets/img/stress.jpg',
+
+                  'Wellness',
+
+                  '150 Menit',
+                )
+              "
             >
-              🛒 Tambah Keranjang
+              Tambah Keranjang
             </button>
 
             <button
               class="buy-btn"
               onclick="pesanSekarang('Stress Recovery Program', 280000)"
             >
-              ⚡ Pesan Sekarang
+              Pesan Sekarang
             </button>
           </div>
         </div>

@@ -10,11 +10,8 @@
     <title>Hot Stone Therapy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
     
@@ -53,8 +50,6 @@
         <div class="product-info">
           <h1>Hot Stone Therapy</h1>
 
-          <div class="rating">⭐⭐⭐⭐⭐ 5.0</div>
-
           <div class="price">Rp220.000</div>
 
           <p class="description">
@@ -86,21 +81,41 @@
               <span>Rating</span>
               <strong>5.0/5</strong>
             </div>
+
+            <div class="rating">
+            <span class="star">★★★★★</span>
+
+            5.0
+
+            <span>(187 Ulasan)</span>
+          </div>
           </div>
 
           <div class="action-buttons">
             <button
               class="cart-btn"
-              onclick="tambahKeranjang('Hot Stone Therapy', 220000)"
+              onclick="
+                tambahKeranjang(
+                  'Hot Stone Therapy',
+
+                  220000,
+
+                  '../assets/img/hot.jpg',
+
+                  'Spa',
+
+                  '90 Menit',
+                )
+              "
             >
-              🛒 Tambah Keranjang
+              Tambah Keranjang
             </button>
 
             <button
               class="buy-btn"
               onclick="pesanSekarang('Hot Stone Therapy', 220000)"
             >
-              ⚡ Pesan Sekarang
+              Pesan Sekarang
             </button>
           </div>
         </div>

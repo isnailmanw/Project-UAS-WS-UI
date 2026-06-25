@@ -1,98 +1,190 @@
 function loadDetailPembayaran() {
-  let metode = localStorage.getItem("metodePembayaran");
+  const metode = localStorage.getItem("metodePembayaran");
 
-  let detail = document.getElementById("payment-detail");
+  const invoice = localStorage.getItem("invoice");
 
-  if (metode === "qris") {
-    detail.innerHTML = `
-    <h2>Pembayaran QRIS</h2>
+  const tanggal = localStorage.getItem("tanggalTransaksi");
 
-    <img
-        src="../assets/img/qris.jpg"
-        class="qris-image"
-        alt="QRIS"
-    >
-    `;
-  } else if (metode === "bca") {
-    detail.innerHTML = `
-    <div class="va-box">
+  const subtotal = Number(localStorage.getItem("subtotalPembayaran")) || 0;
 
-        <h3>
-            Virtual Account BCA
-        </h3>
+  const biaya = Number(localStorage.getItem("biayaLayanan")) || 0;
 
-        <p>
-            88081234567890
-        </p>
+  const total = Number(localStorage.getItem("totalPembayaran")) || 0;
 
-    </div>
-    `;
-  } else if (metode === "bri") {
-    detail.innerHTML = `
-    <div class="va-box">
+  const detail = document.getElementById("payment-detail");
 
-        <h3>
-            Virtual Account BRI
-        </h3>
+  if (!detail) return;
 
-        <p>
-            00271234567890
-        </p>
+  let metodeHTML = "";
 
-    </div>
-    `;
-  } else if (metode === "ewallet") {
-    detail.innerHTML = `
-    <div class="va-box">
+  switch (metode) {
+    case "qris":
+      metodeHTML = `
+            <div class="payment-method-box">
 
-        <h3>
-            Nomor E-Wallet
-        </h3>
+                <h3> Pembayaran QRIS</h3>
 
-        <p>
-            081234567890
-        </p>
+                <img
+                    src="../assets/img/qris.jpg"
+                    class="qris-image"
+                    alt="QRIS"
+                >
 
-    </div>
-    `;
+                <p class="payment-note">
+                    Scan QR menggunakan aplikasi Mobile Banking atau E-Wallet.
+                </p>
+
+            </div>
+            `;
+
+      break;
+
+    case "bca":
+      metodeHTML = `
+            <div class="va-box">
+
+                <h3> Virtual Account BCA</h3>
+
+                <p>88081234567890</p>
+
+                <small>
+                    Transfer tepat sesuai nominal pembayaran.
+                </small>
+
+            </div>
+            `;
+
+      break;
+
+    case "bri":
+      metodeHTML = `
+            <div class="va-box">
+
+                <h3> Virtual Account BRI</h3>
+
+                <p>00271234567890</p>
+
+                <small>
+                    Transfer tepat sesuai nominal pembayaran.
+                </small>
+
+            </div>
+            `;
+
+      break;
+
+    case "ewallet":
+      metodeHTML = `
+            <div class="va-box">
+
+                <h3> E-Wallet</h3>
+
+                <p>081234567890</p>
+
+                <small>
+                    DANA / OVO / GoPay / ShopeePay
+                </small>
+
+            </div>
+            `;
+
+      break;
+
+    default:
+      metodeHTML = `
+            <p>Metode pembayaran tidak ditemukan.</p>
+            `;
   }
+
+  detail.innerHTML = `
+
+        ${metodeHTML}
+
+        <div class="payment-summary">
+
+            <h3>Ringkasan Pembayaran</h3>
+
+            <div class="summary-row">
+                <span>Invoice</span>
+                <strong>${invoice}</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Tanggal</span>
+                <strong>${tanggal}</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong>
+                    Rp${subtotal.toLocaleString("id-ID")}
+                </strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Biaya Layanan</span>
+                <strong>
+                    Rp${biaya.toLocaleString("id-ID")}
+                </strong>
+            </div>
+
+            <hr>
+
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <strong class="total-price">
+                    Rp${total.toLocaleString("id-ID")}
+                </strong>
+            </div>
+
+        </div>
+
+    `;
 }
 
 function konfirmasiPembayaran() {
-  let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+  const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
-  let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+  const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-  let history = JSON.parse(localStorage.getItem("historyTransaksi")) || [];
-
-  let total = 0;
-
-  selectedItems.forEach((item) => {
-    total += item.harga;
-  });
+  const history = JSON.parse(localStorage.getItem("historyTransaksi")) || [];
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   history.push({
-    id: "TRX" + Date.now(),
+    id: localStorage.getItem("invoice"),
 
     namaUser: currentUser ? currentUser.nama : "Guest",
 
-    tanggal: new Date().toLocaleString(),
+    tanggal: localStorage.getItem("tanggalTransaksi"),
 
     metode: localStorage.getItem("metodePembayaran"),
 
-    total: total,
+    subtotal: Number(localStorage.getItem("subtotalPembayaran")),
 
-    status: "Menunggu",
+    biayaLayanan: Number(localStorage.getItem("biayaLayanan")),
+
+    total: Number(localStorage.getItem("totalPembayaran")),
+
+    status: "Pembayaran Berhasil",
 
     items: selectedItems,
   });
 
   localStorage.setItem("historyTransaksi", JSON.stringify(history));
 
-  let sisaKeranjang = keranjang.filter((item) => {
-    return !selectedItems.some((selected) => selected.nama === item.nama);
+  localStorage.removeItem("selectedItems");
+  localStorage.removeItem("subtotalPembayaran");
+  localStorage.removeItem("biayaLayanan");
+  localStorage.removeItem("totalPembayaran");
+  localStorage.removeItem("invoice");
+  localStorage.removeItem("tanggalTransaksi");
+  localStorage.removeItem("metodePembayaran");
+
+  const sisaKeranjang = keranjang.filter(function (item) {
+    return !selectedItems.some(function (selected) {
+      return selected.nama === item.nama && selected.harga === item.harga;
+    });
   });
 
   localStorage.setItem("keranjang", JSON.stringify(sisaKeranjang));
@@ -101,9 +193,21 @@ function konfirmasiPembayaran() {
 
   localStorage.removeItem("metodePembayaran");
 
-  alert("Pembayaran Berhasil!");
+  localStorage.removeItem("subtotalPembayaran");
+
+  localStorage.removeItem("biayaLayanan");
+
+  localStorage.removeItem("totalPembayaran");
+
+  localStorage.removeItem("invoice");
+
+  localStorage.removeItem("tanggalTransaksi");
+
+  alert("Pembayaran berhasil dikonfirmasi.");
 
   window.location.href = "detail_pesanan.html";
 }
 
-loadDetailPembayaran();
+window.onload = function () {
+  loadDetailPembayaran();
+};

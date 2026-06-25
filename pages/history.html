@@ -1,16 +1,28 @@
+<!doctype html>
+
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Riwayat Booking - ZENIS</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/history.css" />
   </head>
+
   <body>
+    <!-- ==========================
+         NAVBAR
+    =========================== -->
+
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
 
@@ -19,19 +31,62 @@
 
         <a href="artikel.html"> Artikel </a>
 
-        <a href="history.html"> Riwayat </a>
+        <a href="history.html" class="active"> Riwayat </a>
       </div>
-
     </nav>
-    <div class="container">
-      <div class="page-header">
+
+    <!-- ==========================
+         CONTENT
+    =========================== -->
+
+    <main class="container">
+      <section class="page-header">
         <h1>Riwayat Booking</h1>
 
-        <p>Semua transaksi yang berhasil dilakukan akan muncul di sini.</p>
-      </div>
+        <p>
+          Semua transaksi yang telah berhasil dibayar akan tersimpan di sini.
+        </p>
+      </section>
 
-      <div id="history-list"></div>
-    </div>
+      <!-- ==========================
+           TABLE HISTORY
+      =========================== -->
+
+      <section class="history-wrapper">
+        <div class="history-title">
+          <h2>Daftar Transaksi</h2>
+
+          <span id="history-count"></span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Invoice</th>
+
+                <th>Tanggal</th>
+
+                <th>Metode</th>
+
+                <th>Total</th>
+
+                <th>Status</th>
+
+                <th>Layanan</th>
+
+                <th>Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody id="history-body">
+              <!-- Diisi oleh history.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
     <script src="../assets/js/history.js"></script>
   </body>
 </html>

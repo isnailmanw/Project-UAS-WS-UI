@@ -6,20 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keranjang - ZENIS</title>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="../assets/css/keranjang.css" />
-   
   </head>
 
   <body>
-  
     <!-- NAVBAR -->
 
     <nav class="navbar">
@@ -55,10 +52,21 @@
         <div class="summary-box">
           <h3>Ringkasan Pesanan</h3>
 
-          <div class="summary-row">
-            <span>Total Pembayaran</span>
+          <div class="summary-item">
+            <span>Subtotal</span>
+            <span id="subtotal">Rp0</span>
+          </div>
 
-            <strong id="total-harga"> Rp0 </strong>
+          <div class="summary-item">
+            <span>Biaya Layanan</span>
+            <span id="biaya-layanan">Rp0</span>
+          </div>
+
+          <hr />
+
+          <div class="summary-total">
+            <span>Total Pembayaran</span>
+            <strong id="total-harga">Rp0</strong>
           </div>
 
           <button class="checkout-btn" onclick="checkout()">
@@ -69,6 +77,5 @@
     </div>
 
     <script src="../assets/js/keranjang.js"></script>
-   
   </body>
 </html>

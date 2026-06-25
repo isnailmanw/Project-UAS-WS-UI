@@ -1,21 +1,33 @@
+```html
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Pesanan - ZENIS</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/detail_pesanan.css" />
   </head>
+
   <body>
+    <!-- NAVBAR -->
+
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
-
     </nav>
+
+    <!-- CONTENT -->
+
     <div class="container">
+      <!-- HEADER -->
+
       <div class="success-header">
         <div class="success-icon">✅</div>
 
@@ -24,12 +36,33 @@
         <p>Pembayaran Anda telah berhasil diproses.</p>
       </div>
 
+      <!-- DETAIL PESANAN -->
+
       <div class="order-card">
         <h2>Detail Pesanan</h2>
 
+        <!-- LIST PRODUK -->
+
         <div id="order-items"></div>
 
+        <!-- INFORMASI TRANSAKSI -->
+
         <div class="info-section">
+          <div class="info-row">
+            <span>No. Invoice</span>
+            <strong id="invoice"></strong>
+          </div>
+
+          <div class="info-row">
+            <span>Subtotal</span>
+            <strong id="subtotal"></strong>
+          </div>
+
+          <div class="info-row">
+            <span>Biaya Layanan</span>
+            <strong id="biaya-layanan"></strong>
+          </div>
+
           <div class="info-row">
             <span>Metode Pembayaran</span>
             <strong id="metode-bayar"></strong>
@@ -42,24 +75,32 @@
 
           <div class="info-row">
             <span>Status</span>
-            <strong class="status-success"> Pembayaran Berhasil </strong>
+
+            <strong id="status" class="status-success"></strong>
           </div>
 
           <div class="info-row total-row">
             <span>Total Pembayaran</span>
+
             <strong id="total-bayar"></strong>
           </div>
         </div>
       </div>
 
-      <div class="action-buttons">
-        <a href="dashboard_user.html" class="btn-secondary">
-          Kembali ke Beranda
-        </a>
+      <!-- BUTTON -->
 
-        <a href="history.html" class="btn-primary"> Lihat Riwayat </a>
+      <div class="action-buttons">
+        <button class="btn-secondary" onclick="kembaliBeranda()">
+          Kembali ke Beranda
+        </button>
+
+        <button class="btn-primary" onclick="lihatRiwayat()">
+          Lihat Riwayat
+        </button>
       </div>
     </div>
+
     <script src="../assets/js/detail_pesanan.js"></script>
   </body>
 </html>
+```
