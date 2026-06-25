@@ -3,56 +3,33 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - ZENIS Wellness Center</title>
+
+    <title>Masuk | ZENIS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="../assets/css/login.css" />
   </head>
 
   <body>
-    <div class="login-container">
-      <!-- LEFT SIDE -->
+    <header class="navbar">
+      <a href="../index.html" class="logo"> ZEN<span>IS</span> </a>
+    </header>
 
-      <div class="login-info">
-        <div class="logo">ZEN<span>IS</span></div>
+    <main class="login-page">
+      <div class="login-box">
+        <h1>Masuk</h1>
 
-        <h1>Selamat Datang Kembali</h1>
-
-        <p>
-          Masuk ke akun Anda dan nikmati pengalaman booking layanan wellness
-          yang lebih mudah, nyaman, dan menenangkan bersama ZENIS Wellness
-          Center.
+        <p class="subtitle">
+          Masuk ke akun untuk melanjutkan booking layanan wellness.
         </p>
-
-        <div class="wellness-icons">
-          <div class="icon-card">
-            🧘
-            <span>Yoga</span>
-          </div>
-
-          <div class="icon-card">
-            💆
-            <span>Spa</span>
-          </div>
-
-          <div class="icon-card">
-            ✨
-            <span>Beauty</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE -->
-
-      <div class="login-card">
-        <h2>Login Akun</h2>
-
-        <p class="subtitle">Silakan masuk untuk melanjutkan booking layanan.</p>
 
         <form id="loginForm">
           <div class="input-group">
@@ -77,26 +54,34 @@
             />
           </div>
 
-          <button type="submit" class="login-btn-main">Login</button>
+          <div class="login-option">
+            <a href="#"> Lupa Password? </a>
+          </div>
+
+          <button type="submit" class="login-btn">Masuk</button>
         </form>
 
-        <div class="extra-links">
-          <a href="#"> Lupa Password? </a>
-        </div>
+        <div class="demo-box">
+          <h3>Akun Demo</h3>
 
-        <div class="demo-login">
-          <p><strong>Email :</strong> user@mail.com</p>
+          <div class="demo-row">
+            <span>User</span>
 
-          <p><strong>Password :</strong> 12345</p>
+            <strong> user@mail.com </strong>
+          </div>
 
-          <small>
-            Gunakan akun ini untuk mencoba fitur marketplace ZENIS.
-          </small>
-        </div>
+          <div class="demo-row">
+            <span>Password</span>
 
-        <a href="../index.html" class="back-home"> ← Kembali ke Beranda </a>
+            <strong> 12345 </strong>
+          </div>
+
+          <hr />
+
+
+        <a href="../index.html" class="back-home"> Kembali ke Beranda </a>
       </div>
-    </div>
+    </main>
 
     <script src="../assets/js/login.js"></script>
   </body>
