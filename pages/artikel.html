@@ -1,74 +1,69 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Artikel Wellness | ZENIS</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/artikel_user.css" />
   </head>
-
   <body>
-    <!-- ==========================
-         NAVBAR
-    =========================== -->
-
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
-
       <div class="nav-menu">
-        <a href="dashboard_user.html"> Beranda </a>
-
-        <a href="artikel.html" class="active"> Artikel </a>
-
-        <a href="history.html"> Riwayat </a>
+        <a href="dashboard_user.html">Layanan</a>
+        <a href="artikel.html" class="active">Artikel</a>
+        <a href="history.html">Riwayat</a>
+      </div>
+      <div class="nav-right">
+        <a href="keranjang.html" class="icon-btn"><i class="bi bi-bag"></i></a>
+        <span class="user-label">User</span>
+        <a href="login.html" class="logout-btn">Keluar</a>
       </div>
     </nav>
 
-    <!-- ==========================
-         PAGE HEADER
-    =========================== -->
-
-    <main class="container">
-      <section class="page-header">
-
-        <h1>Artikel Wellness</h1>
-
-        <p>
-          Temukan berbagai informasi mengenai yoga, spa, beauty, wellness, dan
-          gaya hidup sehat untuk membantu menjaga kesehatan tubuh maupun
-          pikiran.
-        </p>
+    <main>
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <div class="page-eyebrow"><span></span> Wellness Journal</div>
+          <h1>Artikel <em>Wellness</em></h1>
+          <p>
+            Yoga, spa, beauty & gaya hidup sehat — dipilih dengan cermat untuk
+            tubuh dan pikiran yang lebih utuh.
+          </p>
+        </div>
       </section>
 
-  
+      <section class="kategori-section">
+        <div class="kategori-pills">
+          <button class="pill active" data-filter="semua">Semua</button>
+          <button class="pill" data-filter="yoga">Yoga</button>
+          <button class="pill" data-filter="spa">Spa</button>
+          <button class="pill" data-filter="wellness">Wellness</button>
+          <button class="pill" data-filter="beauty">Beauty</button>
+        </div>
+      </section>
 
-      <!-- ==========================
-           ARTIKEL
-      =========================== -->
-
-      <section class="article-section">
-        <div class="section-title">
-          
-
-        <!--
-            JANGAN DIUBAH
-            Dipakai artikel_user.js
-        -->
-
+      <section class="layanan-section">
+        <div class="section-label">Pilihan Artikel</div>
         <div id="artikelContainer" class="artikel-grid"></div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">ZEN<span>IS</span></div>
+        <p>© 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
 
     <script src="../assets/js/artikel_user.js"></script>
   </body>
