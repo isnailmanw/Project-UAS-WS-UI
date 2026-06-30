@@ -3,212 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZENIS Wellness</title>
+    <title>ZENIS — Wellness Marketplace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
-    <nav>
-      <div class="logo">ZEN<span>IS</span></div>
-      <div class="menu">
-        <a href="pages/login.html" class="login-btn"> Login </a>
+    <nav class="navbar">
+      <a href="index.html" class="logo">ZEN<span>IS</span></a>
+      <div class="nav-menu">
+        <a href="#services">Layanan</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="#artikel">Artikel</a>
+      </div>
+      <div class="nav-right">
+        <a href="pages/dashboard_user.html" class="btn-outline">Katalog</a>
+        <a href="pages/login.html" class="btn-solid">Masuk</a>
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero fade" id="home">
-      <div class="hero-text">
-        <h1>Temukan Ketenangan di <span>ZENIS</span></h1>
-
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Wellness Marketplace</span>
+        <h1>Temukan Ketenangan,<br />Rawat <span>Dirimu</span></h1>
         <p>
-          ZENIS Wellness Center menghadirkan berbagai layanan yoga, spa, dan
-          beauty treatment untuk membantu Anda menjaga kesehatan tubuh, pikiran,
-          dan keseimbangan hidup.
+          ZENIS menghadirkan layanan yoga, spa, dan beauty treatment untuk
+          membantu kamu menjaga keseimbangan tubuh, pikiran, dan jiwa.
         </p>
-        <div class="hero-buttons">
-          <a href="pages/login.html" class="booking-now"> Booking Sekarang </a>
+        <div class="hero-actions">
+          <a href="pages/dashboard_user.html" class="btn-primary">
+            <i class="bi bi-calendar-check"></i> Booking Sekarang
+          </a>
+          <a href="#services" class="btn-ghost">
+            Lihat Layanan <i class="bi bi-arrow-down"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>12+</strong>
+            <span>Layanan</span>
+          </div>
+          <div class="stat">
+            <strong>4.8</strong>
+            <span>Rating</span>
+          </div>
+          <div class="stat">
+            <strong>2K+</strong>
+            <span>Pesanan</span>
+          </div>
         </div>
       </div>
-
-      <div class="hero-image">
+      <div class="hero-visual">
         <div class="logo-wrapper">
           <div class="top-circle"></div>
           <div class="left-circle"></div>
           <div class="logo-box">
-            <div class="zenis-icon">✦</div>
-            <div class="small-dot"></div>
-            <div class="plus-icon">+</div>
+            <span class="zenis-icon">&#x2726;</span>
+            <span class="small-dot"></span>
+            <span class="plus-icon">+</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES — section-light -->
-    <section id="services" class="section-light">
-      <div class="section-title fade">
-        <h2>Layanan Unggulan ZENIS</h2>
-
-        <p>
-          Pilih layanan terbaik yang dirancang untuk membantu Anda merasa lebih
-          rileks, sehat, dan percaya diri.
-        </p>
+    <section id="services" class="services-section">
+      <div class="section-header">
+        <span class="section-tag">Layanan</span>
+        <h2>Pilih Layanan <em>Wellness</em> Terbaik</h2>
+        <p>Dari yoga hingga spa, semua dirancang untuk membantu kamu merasa lebih rileks dan sehat.</p>
       </div>
-      <div class="service-wrapper">
+      <div class="services-grid">
         <div class="service-card fade">
-          <div class="service-icon purple">🧘</div>
-          <h3>Yoga Session</h3>
-          <p>
-            Temukan sesi yoga terbaik untuk membantu tubuh dan pikiran menjadi
-            lebih rileks dan seimbang.
-          </p>
+          <div class="service-image">
+            <img src="assets/img/yoga.jpg" alt="Yoga" />
+          </div>
+          <div class="service-body">
+            <h3>Yoga & Meditasi</h3>
+            <p>Tingkatkan fleksibilitas, kurangi stres, dan temukan ketenangan batin melalui sesi yoga yang dipandu instruktur profesional.</p>
+            <div class="service-footer">
+              <span class="service-price">Mulai Rp95K</span>
+              <a href="pages/dashboard_user.html" class="service-link">
+                Booking <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="service-card fade">
-          <div class="service-icon green">💆</div>
-          <h3>Massage Therapy</h3>
-          <p>
-            Layanan massage profesional untuk membantu mengurangi stres dan
-            meningkatkan relaksasi tubuh.
-          </p>
+          <div class="service-image">
+            <img src="assets/img/relaxation.jpg" alt="Spa" />
+          </div>
+          <div class="service-body">
+            <h3>Spa & Massage</h3>
+            <p>Rileksasikan tubuh dengan pijat relaksasi, aromaterapi, dan hot stone therapy dari terapis berpengalaman.</p>
+            <div class="service-footer">
+              <span class="service-price">Mulai Rp150K</span>
+              <a href="pages/dashboard_user.html" class="service-link">
+                Booking <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="service-card fade">
-          <div class="service-icon yellow">🌿</div>
-          <h3>Spa & Beauty</h3>
-          <p>
-            Rasakan pengalaman spa premium dengan suasana yang nyaman dan
-            menenangkan.
-          </p>
+          <div class="service-image">
+            <img src="assets/img/facial.jpg" alt="Beauty" />
+          </div>
+          <div class="service-body">
+            <h3>Beauty Treatment</h3>
+            <p>Facial, hair treatment, dan manicure pedicure untuk merawat kecantikan dan meningkatkan rasa percaya diri.</p>
+            <div class="service-footer">
+              <span class="service-price">Mulai Rp180K</span>
+              <a href="pages/dashboard_user.html" class="service-link">
+                Booking <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ARTICLES — section-deep (ungu tua) -->
-    <section id="articles" class="section-deep">
-      <div class="section-title fade">
-        <h2>Artikel Self-Care</h2>
-        <p>
-          Temukan berbagai tips kesehatan dan relaksasi untuk menjaga
-          keseimbangan tubuh dan pikiran.
-        </p>
+    <section id="testimonial" class="testimonial-section">
+      <div class="section-header">
+        <span class="section-tag">Testimonial</span>
+        <h2>Apa Kata <em>Mereka?</em></h2>
+        <p>Pengalaman pengguna yang telah menggunakan layanan wellness melalui ZENIS.</p>
       </div>
-      <div class="article-wrapper">
-        <!-- ARTICLE 1 -->
-        <a
-          class="article-card fade"
-          href="https://www.alodokter.com/maksimalkan-manfaat-yoga-untuk-kesehatan-jiwa-dan-raga"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="article-image">
-            <img src="assets/img/yoga.jpg" alt="Quality Time" />
-          </div>
-          <div class="article-content">
-            <span class="article-tag">Self Care</span>
-            <h3>Maksimalkan Manfaat Yoga untuk Kesehatan Jiwa dan Raga</h3>
-            <p>
-              Pelajari bagaimana yoga memberi manfaat luar biasa bagi kesehatan
-              fisik dan mental Anda sehari-hari.
-            </p>
-            <div class="read-more">Baca Selengkapnya →</div>
-          </div>
-        </a>
-
-        <!-- ARTICLE 2 -->
-        <a
-          class="article-card fade"
-          href="https://www.halodoc.com/artikel/qtime-itu-apa-makna-dan-cara-nikmati-waktu-terbaik?srsltid=AfmBOoq8s6c0eaj0hzFw7FLtrV01cNCvgh_jWh73ymeQ-mNU2xbVZah7"
-          target="_blank"
-        >
-          <div class="article-image">
-            <img src="assets/img/qualitytime.jpg" alt="Quality Time" />
-          </div>
-
-          <div class="article-content">
-            <span class="article-tag"> Wellness </span>
-
-            <h3>Pentingnya Quality Time untuk Kesehatan Mental</h3>
-
-            <p>
-              Quality time dapat membantu meningkatkan suasana hati dan
-              mengurangi tekanan sehari-hari.
-            </p>
-
-            <div class="read-more">Baca Selengkapnya →</div>
-          </div>
-        </a>
-
-        <!-- ARTICLE 3 -->
-        <a
-          class="article-card fade"
-          href="https://www.halodoc.com/artikel/relaksasi-pikiran-cara-jitu-tidur-nyenyak-5?srsltid=AfmBOooL7FMBpZzPfpzZxxZdxlzdVqVmiCxzCRLoCYdtneV-PQwEfx2F"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="article-image">
-            <img src="assets/img/article-meditasi.jpg" alt="Quality Time" />
-          </div>
-          <div class="article-content">
-            <span class="article-tag">Healthy Life</span>
-            <h3>Meditasi Ringan untuk Membantu Tidur Lebih Nyenyak</h3>
-            <p>
-              Meditasi dapat membantu tubuh menjadi lebih rileks dan
-              meningkatkan kualitas tidur.
-            </p>
-            <div class="read-more">Baca Selengkapnya →</div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- TESTIMONIAL — section-light -->
-    <section id="testimonials" class="section-light">
-      <div class="section-title fade">
-        <h2>Apa Kata Mereka?</h2>
-        <p>
-          Pengalaman pengguna yang telah menggunakan layanan wellness melalui
-          platform ini.
-        </p>
-      </div>
-      <div class="testimonial-wrapper">
+      <div class="testimonial-grid">
         <div class="testimonial-card fade">
-          <p>
-            "Proses booking sangat mudah dan tampilannya nyaman digunakan. Saya
-            jadi lebih mudah melakukan self-care setelah aktivitas kuliah."
-          </p>
-          <div class="user">
-            <div class="avatar"></div>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"Proses booking sangat mudah dan tampilannya nyaman digunakan. Saya jadi lebih mudah melakukan self-care setelah aktivitas kuliah."</p>
+          <div class="testimonial-user">
+            <div class="test-avatar" style="background:#f2e5ff;color:#8d72a8">N</div>
             <div>
-              <h4>Nana</h4>
+              <strong>Nana</strong>
               <span>Mahasiswa</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card fade">
-          <p>
-            "Desain website terlihat modern dan nyaman digunakan sehari-hari.
-            Booking jadi lebih praktis dan cepat."
-          </p>
-          <div class="user">
-            <div class="avatar"></div>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"Desain website terlihat modern dan nyaman digunakan sehari-hari. Booking jadi lebih praktis dan cepat."</p>
+          <div class="testimonial-user">
+            <div class="test-avatar" style="background:#e8fbf4;color:#0d9488">R</div>
             <div>
-              <h4>Raisa</h4>
+              <strong>Raisa</strong>
               <span>Content Creator</span>
             </div>
           </div>
         </div>
         <div class="testimonial-card fade">
-          <p>
-            "Saya suka karena proses transaksi dan booking terasa lebih simpel
-            dan tidak membingungkan."
-          </p>
-          <div class="user">
-            <div class="avatar"></div>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"Saya suka karena proses transaksi dan booking terasa lebih simpel dan tidak membingungkan."</p>
+          <div class="testimonial-user">
+            <div class="test-avatar" style="background:#fef3c7;color:#d97706">A</div>
             <div>
-              <h4>Alvin</h4>
+              <strong>Alvin</strong>
               <span>UI Designer</span>
             </div>
           </div>
@@ -216,35 +189,96 @@
       </div>
     </section>
 
-    <!-- CTA — section-deep (ungu tua) -->
-    <section class="section-cta section-deep">
-      <div class="cta fade">
-        <h2>Mulai Self-Care Hari Ini</h2>
-        <p>
-          Temukan layanan wellness terbaik dan nikmati pengalaman relaksasi yang
-          nyaman dan praktis.
-        </p>
-        <a href="pages/login.html" class="cta-btn">
-          <span>Mulai Sekarang</span>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
+    <section id="artikel" class="articles-section">
+      <div class="section-header">
+        <span class="section-tag">Artikel</span>
+        <h2>Tips <em>Self-Care</em> Terbaru</h2>
+        <p>Baca artikel seputar kesehatan, relaksasi, dan gaya hidup seimbang dari tim ZENIS.</p>
+      </div>
+      <div class="articles-grid">
+        <div class="article-card fade">
+          <div class="article-image">
+            <img src="assets/img/yoga.jpg" alt="Yoga" />
+          </div>
+          <div class="article-content">
+            <span class="article-tag">Yoga</span>
+            <h3>5 Manfaat Yoga untuk Mengurangi Stres</h3>
+            <p>Yoga membantu mengurangi stres, meningkatkan fokus, dan menjaga kesehatan fisik maupun mental.</p>
+            <a href="pages/artikel.html" class="article-link">
+              Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="article-card fade">
+          <div class="article-image">
+            <img src="assets/img/qualitytime.jpg" alt="Quality Time" />
+          </div>
+          <div class="article-content">
+            <span class="article-tag">Wellness</span>
+            <h3>Pentingnya Quality Time untuk Kesehatan Mental</h3>
+            <p>Quality time dapat membantu meningkatkan suasana hati dan mengurangi tekanan sehari-hari.</p>
+            <a href="pages/artikel.html" class="article-link">
+              Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="article-card fade">
+          <div class="article-image">
+            <img src="assets/img/article-meditasi.jpg" alt="Meditasi" />
+          </div>
+          <div class="article-content">
+            <span class="article-tag">Healthy Life</span>
+            <h3>Meditasi Ringan untuk Membantu Tidur Lebih Nyenyak</h3>
+            <p>Meditasi dapat membantu tubuh menjadi lebih rileks dan meningkatkan kualitas tidur.</p>
+            <a href="pages/artikel.html" class="article-link">
+              Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>Mulai Self-Care Hari Ini</h2>
+          <p>Temukan layanan wellness terbaik dan nikmati pengalaman relaksasi yang nyaman dan praktis.</p>
+        </div>
+        <a href="pages/dashboard_user.html" class="btn-primary btn-large">
+          <i class="bi bi-calendar-check"></i> Booking Sekarang
         </a>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>© 2026 ZENIS Wellness Platform</footer>
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">ZEN<span>IS</span></div>
+          <p>Wellness Marketplace untuk membantu kamu merawat tubuh, pikiran, dan jiwa.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Menu</h5>
+          <a href="pages/dashboard_user.html">Katalog</a>
+          <a href="pages/artikel.html">Artikel</a>
+          <a href="pages/login.html">Masuk</a>
+        </div>
+        <div class="footer-links">
+          <h5>Layanan</h5>
+          <a href="pages/dashboard_user.html">Yoga</a>
+          <a href="pages/dashboard_user.html">Spa</a>
+          <a href="pages/dashboard_user.html">Beauty</a>
+        </div>
+        <div class="footer-links">
+          <h5>Kontak</h5>
+          <span><i class="bi bi-geo-alt"></i> Bandung, Indonesia</span>
+          <span><i class="bi bi-envelope"></i> hello@zenis.id</span>
+          <span><i class="bi bi-telephone"></i> +62 812 3456 7890</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
 
     <script src="assets/js/script.js"></script>
   </body>

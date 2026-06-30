@@ -656,13 +656,29 @@ keseimbangan tubuh dan pikiran agar tetap sehat dan produktif.
 }
 
 const articles = JSON.parse(localStorage.getItem("zenis_articles")) || [];
+let filterKategori = "semua";
 
 renderArtikel();
+
+document.querySelectorAll(".pill").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document
+      .querySelectorAll(".pill")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    filterKategori = btn.dataset.filter;
+    renderArtikel();
+  });
+});
 
 function renderArtikel() {
   container.innerHTML = "";
 
-  if (articles.length === 0) {
+  const filtered = filterKategori === "semua"
+    ? articles
+    : articles.filter((a) => a.kategori.toLowerCase() === filterKategori);
+
+  if (filtered.length === 0) {
     container.innerHTML = `
       <div
         style="
@@ -682,45 +698,35 @@ function renderArtikel() {
     return;
   }
 
-  articles.forEach((artikel) => {
+  filtered.forEach((artikel) => {
     container.innerHTML += `
-      <div class="artikel-card">
-
-        <img
-          src="${artikel.gambar}"
-          alt="${artikel.judul}"
-        >
-
-        <div class="artikel-content">
-
-          <span class="kategori">
-            ${artikel.kategori}
-          </span>
-
-          <h3>
-            ${artikel.judul}
-          </h3>
-
-          <p>
-            ${artikel.ringkasan}
-          </p>
-
-          <div class="meta">
-            ${artikel.penulis}
-            •
-            ${artikel.tanggal}
-          </div>
-
-          <a
-            href="detail_artikel.html?id=${artikel.id}"
-            class="read-btn"
-          >
-            Baca Selengkapnya
-          </a>
-
+      <a
+        href="detail_artikel.html?id=${artikel.id}"
+        class="artikel-card"
+      >
+        <div class="artikel-card-img">
+          <img
+            src="${artikel.gambar}"
+            alt="${artikel.judul}"
+          />
+          <span class="artikel-tag">${artikel.kategori}</span>
         </div>
 
-      </div>
+        <div class="artikel-body">
+          <h3>${artikel.judul}</h3>
+
+          <p>${artikel.ringkasan}</p>
+
+          <div class="artikel-meta">
+            <span class="artikel-meta-date">
+              ${artikel.penulis} &bull; ${artikel.tanggal}
+            </span>
+            <span class="artikel-read-btn">
+              Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+            </span>
+          </div>
+        </div>
+      </a>
     `;
   });
 }

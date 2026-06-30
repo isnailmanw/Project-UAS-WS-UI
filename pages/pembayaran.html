@@ -1,136 +1,176 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Pembayaran - ZENIS</title>
-
+    <title>Pembayaran — ZENIS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/pembayaran.css" />
   </head>
-
   <body>
-    <!-- NAVBAR -->
-
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
+      <div class="nav-menu">
+        <a href="dashboard_user.html">Beranda</a>
+        <a href="artikel.html">Artikel</a>
+        <a href="history.html">Riwayat</a>
+      </div>
+      <div class="nav-right">
+        <a href="keranjang.html" class="icon-btn"><i class="bi bi-bag"></i></a>
+        <span class="user-label">User</span>
+        <a href="login.html" class="logout-btn">Keluar</a>
+      </div>
     </nav>
 
-    <!-- CONTENT -->
-
     <div class="container">
-      <div class="page-header">
-        <h1>Pembayaran</h1>
+      <div class="checkout-steps">
+        <div class="step done">
+          <span class="step-circle"><i class="bi bi-check-lg"></i></span>
+          <span class="step-label">Keranjang</span>
+        </div>
+        <div class="step-connector done"></div>
+        <div class="step active">
+          <span class="step-circle">2</span>
+          <span class="step-label">Pembayaran</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <span class="step-circle">3</span>
+          <span class="step-label">Selesai</span>
+        </div>
+      </div>
 
-        <p>
-          Periksa kembali layanan yang akan Anda pesan sebelum melanjutkan
-          pembayaran.
-        </p>
+      <div class="page-header">
+        <h1>Checkout</h1>
+        <p class="page-subtitle">Periksa kembali pesanan Anda sebelum melanjutkan pembayaran</p>
       </div>
 
       <div class="payment-layout">
-        <!-- KIRI -->
-
         <div class="payment-left">
-          <!-- PRODUK -->
-
           <div class="card">
-            <h2>Layanan Dipilih</h2>
-
+            <div class="card-header">
+              <i class="bi bi-box-seam"></i>
+              <h2>Layanan Dipilih</h2>
+            </div>
             <div id="payment-items"></div>
           </div>
 
-          <!-- METODE -->
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-person-badge"></i>
+              <h2>Identitas Pemesan</h2>
+            </div>
+            <div class="identity-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="field-nama">Nama Lengkap</label>
+                  <input type="text" id="field-nama" class="form-input" placeholder="Masukkan nama lengkap" required />
+                </div>
+                <div class="form-group">
+                  <label for="field-telepon">Nomor Telepon</label>
+                  <input type="tel" id="field-telepon" class="form-input" placeholder="Masukkan nomor telepon" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="field-alamat">Alamat</label>
+                <textarea id="field-alamat" class="form-input form-textarea" placeholder="Masukkan alamat lengkap" rows="2"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="field-catatan">Catatan (opsional)</label>
+                <textarea id="field-catatan" class="form-input form-textarea" placeholder="Pesan tambahan untuk pemesanan ini" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
 
           <div class="card">
-            <h2>Metode Pembayaran</h2>
-
+            <div class="card-header">
+              <i class="bi bi-credit-card"></i>
+              <h2>Metode Pembayaran</h2>
+            </div>
             <div class="payment-methods">
               <label class="method-card">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="qris"
-                />
-                <span>QRIS</span>
+                <input type="radio" name="payment" value="qris" />
+                <i class="bi bi-qr-code"></i>
+                <span class="method-label">QRIS</span>
+                <span class="method-desc">Scan QR via aplikasi pembayaran</span>
               </label>
 
               <label class="method-card">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="bca"
-                />
-                <span>Transfer BCA</span>
+                <input type="radio" name="payment" value="bca" />
+                <i class="bi bi-bank"></i>
+                <span class="method-label">Transfer BCA</span>
+                <span class="method-desc">Virtual Account BCA</span>
               </label>
 
               <label class="method-card">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="bri"
-                />
-                <span>Transfer BRI</span>
+                <input type="radio" name="payment" value="bri" />
+                <i class="bi bi-bank2"></i>
+                <span class="method-label">Transfer BRI</span>
+                <span class="method-desc">Virtual Account BRI</span>
               </label>
 
               <label class="method-card">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="ewallet"
-                />
-                <span>E-Wallet</span>
+                <input type="radio" name="payment" value="ewallet" />
+                <i class="bi bi-wallet2"></i>
+                <span class="method-label">E-Wallet</span>
+                <span class="method-desc">GoPay, OVO, DANA, LinkAja</span>
               </label>
             </div>
-
-            
           </div>
         </div>
 
-        <!-- KANAN -->
-
         <aside class="summary-box">
-          <h2>Ringkasan Pesanan</h2>
-
-          <div class="summary-item">
-            <span>Subtotal</span>
-
-            <span id="subtotal"> Rp0 </span>
+          <div class="summary-box-header">
+            <i class="bi bi-receipt"></i>
+            <h3>Ringkasan Pesanan</h3>
           </div>
 
-          <div class="summary-item">
-            <span>Biaya Layanan</span>
-
-            <span id="biaya-layanan"> Rp0 </span>
-          </div>
-
-          <hr />
-
-          <div class="summary-total">
-            <span>Total Pembayaran</span>
-
-            <strong id="payment-total"> Rp0 </strong>
+          <div class="summary-rows">
+            <div class="summary-item">
+              <span class="summary-label">Subtotal</span>
+              <span class="summary-value" id="subtotal">Rp0</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Biaya Layanan</span>
+              <span class="summary-value" id="biaya-layanan">Rp0</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-total">
+              <span class="total-label">Total Pembayaran</span>
+              <strong class="total-value" id="payment-total">Rp0</strong>
+            </div>
           </div>
 
           <button class="pay-btn" onclick="selesaikanPembayaran()">
-            Buat Pesanan
+            <i class="bi bi-check2-circle"></i> Buat Pesanan
           </button>
 
           <button class="back-btn" onclick="kembaliKeKeranjang()">
-            Kembali ke Keranjang
+            <i class="bi bi-arrow-left"></i> Kembali ke Keranjang
           </button>
+
+          <div class="checkout-trust">
+            <i class="bi bi-shield-check"></i>
+            <span>Data Anda aman & terenkripsi</span>
+          </div>
         </aside>
       </div>
     </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">ZEN<span>IS</span></div>
+        <p>&copy; 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
 
     <script src="../assets/js/pembayaran.js"></script>
   </body>

@@ -1,50 +1,102 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Detail Pembayaran - ZENIS</title>
-
+    <title>Detail Pembayaran — ZENIS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/detail_pembayaran.css" />
   </head>
-
   <body>
-    <!-- NAVBAR -->
-
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
+      <div class="nav-menu">
+        <a href="dashboard_user.html">Beranda</a>
+        <a href="artikel.html">Artikel</a>
+        <a href="history.html">Riwayat</a>
+      </div>
+      <div class="nav-right">
+        <a href="keranjang.html" class="icon-btn"><i class="bi bi-bag"></i></a>
+        <span class="user-label">User</span>
+        <a href="login.html" class="logout-btn">Keluar</a>
+      </div>
     </nav>
 
-    <!-- CONTENT -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="dashboard_user.html">Beranda</a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="pembayaran.html">Pembayaran</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Detail Pembayaran</span>
+      </div>
 
-    <main class="container">
-      <section class="payment-card">
+      <div class="checkout-steps">
+        <div class="step done">
+          <span class="step-circle"><i class="bi bi-check-lg"></i></span>
+          <span class="step-label">Keranjang</span>
+        </div>
+        <div class="step-connector done"></div>
+        <div class="step done">
+          <span class="step-circle"><i class="bi bi-check-lg"></i></span>
+          <span class="step-label">Pembayaran</span>
+        </div>
+        <div class="step-connector done"></div>
+        <div class="step active">
+          <span class="step-circle">3</span>
+          <span class="step-label">Selesai</span>
+        </div>
+      </div>
+
+      <div class="page-header">
         <h1>Selesaikan Pembayaran</h1>
+        <p class="page-subtitle">Lakukan pembayaran sesuai metode yang Anda pilih</p>
+      </div>
 
-        <p class="subtitle">
-          Silakan lakukan pembayaran menggunakan metode yang telah Anda pilih.
-        </p>
+      <div class="payment-detail-layout">
+        <div class="payment-main">
+          <div class="card">
+            <div class="card-header">
+              <i class="bi bi-credit-card-2-front"></i>
+              <h2>Instruksi Pembayaran</h2>
+            </div>
+            <div id="payment-detail"></div>
+          </div>
+        </div>
 
-        <!-- Seluruh isi metode pembayaran dan ringkasan
-             akan dibuat otomatis oleh detail_pembayaran.js -->
+        <aside class="summary-box">
+          <div class="summary-box-header">
+            <i class="bi bi-receipt"></i>
+            <h3>Ringkasan</h3>
+          </div>
+          <p class="summary-help">Setelah melakukan pembayaran, klik tombol di bawah untuk konfirmasi.</p>
 
-        <div id="payment-detail"></div>
+          <button class="confirm-btn" onclick="konfirmasiPembayaran()">
+            <i class="bi bi-check2-circle"></i> Konfirmasi Pembayaran
+          </button>
 
-        <button class="finish-btn" onclick="konfirmasiPembayaran()">
-          Konfirmasi Pembayaran
-        </button>
-      </section>
-    </main>
+          <div class="checkout-trust">
+            <i class="bi bi-shield-check"></i>
+            <span>Pembayaran Anda aman & terenkripsi</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">ZEN<span>IS</span></div>
+        <p>&copy; 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
 
     <script src="../assets/js/detail_pembayaran.js"></script>
   </body>

@@ -3,103 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detail Pesanan - ZENIS</title>
-
+    <title>Pesanan Berhasil — ZENIS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/detail_pesanan.css" />
   </head>
-
   <body>
-    <!-- NAVBAR -->
-
     <nav class="navbar">
       <div class="logo">ZEN<span>IS</span></div>
+      <div class="nav-menu">
+        <a href="dashboard_user.html">Beranda</a>
+        <a href="artikel.html">Artikel</a>
+        <a href="history.html">Riwayat</a>
+      </div>
+      <div class="nav-right">
+        <a href="keranjang.html" class="icon-btn"><i class="bi bi-bag"></i></a>
+        <span class="user-label">User</span>
+        <a href="login.html" class="logout-btn">Keluar</a>
+      </div>
     </nav>
 
-    <!-- CONTENT -->
-
     <div class="container">
-      <!-- HEADER -->
-
-      <div class="success-header">
-        <div class="success-icon">✅</div>
-
-        <h1>Pesanan Berhasil Dibuat</h1>
-
-        <p>Pembayaran Anda telah berhasil diproses.</p>
+      <div class="breadcrumb">
+        <a href="dashboard_user.html">Beranda</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Pesanan Berhasil</span>
       </div>
 
-      <!-- DETAIL PESANAN -->
+      <div class="success-header">
+        <div class="success-icon">
+          <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <h1>Pesanan Berhasil Dibuat</h1>
+        <p>Pembayaran Anda telah berhasil diproses. Terima kasih telah berbelanja di ZENIS.</p>
+      </div>
 
       <div class="order-card">
-        <h2>Detail Pesanan</h2>
-
-        <!-- LIST PRODUK -->
+        <div class="order-card-header">
+          <i class="bi bi-receipt-cutoff"></i>
+          <h2>Detail Pesanan</h2>
+        </div>
 
         <div id="order-items"></div>
 
-        <!-- INFORMASI TRANSAKSI -->
+        <div class="identity-section">
+          <div class="identity-card">
+            <div class="identity-header">
+              <i class="bi bi-person"></i>
+              <span>Informasi Pemesan</span>
+            </div>
+            <div class="identity-details">
+              <div class="identity-row">
+                <span>Nama</span>
+                <strong id="identitas-nama"></strong>
+              </div>
+              <div class="identity-row">
+                <span>Telepon</span>
+                <strong id="identitas-telepon"></strong>
+              </div>
+              <div class="identity-row">
+                <span>Alamat</span>
+                <strong id="identitas-alamat"></strong>
+              </div>
+              <div class="identity-row">
+                <span>Catatan</span>
+                <strong id="identitas-catatan"></strong>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="info-section">
           <div class="info-row">
             <span>No. Invoice</span>
             <strong id="invoice"></strong>
           </div>
-
           <div class="info-row">
             <span>Subtotal</span>
             <strong id="subtotal"></strong>
           </div>
-
           <div class="info-row">
             <span>Biaya Layanan</span>
             <strong id="biaya-layanan"></strong>
           </div>
-
           <div class="info-row">
             <span>Metode Pembayaran</span>
             <strong id="metode-bayar"></strong>
           </div>
-
           <div class="info-row">
             <span>Tanggal Transaksi</span>
             <strong id="tanggal-transaksi"></strong>
           </div>
-
           <div class="info-row">
             <span>Status</span>
-
             <strong id="status" class="status-success"></strong>
           </div>
-
           <div class="info-row total-row">
             <span>Total Pembayaran</span>
-
             <strong id="total-bayar"></strong>
           </div>
         </div>
       </div>
 
-      <!-- BUTTON -->
-
       <div class="action-buttons">
         <button class="btn-secondary" onclick="kembaliBeranda()">
-          Kembali ke Beranda
+          <i class="bi bi-house"></i> Kembali ke Beranda
         </button>
-
         <button class="btn-primary" onclick="lihatRiwayat()">
-          Lihat Riwayat
+          <i class="bi bi-clock-history"></i> Lihat Riwayat
         </button>
       </div>
     </div>
 
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">ZEN<span>IS</span></div>
+        <p>&copy; 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
+
     <script src="../assets/js/detail_pesanan.js"></script>
   </body>
 </html>
-```

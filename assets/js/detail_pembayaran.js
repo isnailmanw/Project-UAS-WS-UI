@@ -151,10 +151,18 @@ function konfirmasiPembayaran() {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+  const identitas = JSON.parse(localStorage.getItem("identitasPemesanan")) || {};
+
   history.push({
     id: localStorage.getItem("invoice"),
 
-    namaUser: currentUser ? currentUser.nama : "Guest",
+    namaUser: identitas.nama || (currentUser ? currentUser.nama : "Guest"),
+
+    telepon: identitas.telepon || "",
+
+    alamat: identitas.alamat || "",
+
+    catatan: identitas.catatan || "",
 
     tanggal: localStorage.getItem("tanggalTransaksi"),
 
@@ -180,6 +188,7 @@ function konfirmasiPembayaran() {
   localStorage.removeItem("invoice");
   localStorage.removeItem("tanggalTransaksi");
   localStorage.removeItem("metodePembayaran");
+  localStorage.removeItem("identitasPemesanan");
 
   const sisaKeranjang = keranjang.filter(function (item) {
     return !selectedItems.some(function (selected) {

@@ -82,6 +82,14 @@ function updateSummary() {
   }
 }
 
+function loadIdentity() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const namaField = document.getElementById("field-nama");
+  if (user && user.nama && namaField) {
+    namaField.value = user.nama;
+  }
+}
+
 function selesaikanPembayaran() {
   const metode = document.querySelector('input[name="payment"]:checked');
 
@@ -98,6 +106,27 @@ function selesaikanPembayaran() {
 
     return;
   }
+
+  const nama = document.getElementById("field-nama").value.trim();
+  const telepon = document.getElementById("field-telepon").value.trim();
+
+  if (!nama) {
+    alert("Silakan masukkan nama lengkap Anda!");
+    document.getElementById("field-nama").focus();
+    return;
+  }
+
+  if (!telepon) {
+    alert("Silakan masukkan nomor telepon Anda!");
+    document.getElementById("field-telepon").focus();
+    return;
+  }
+
+  const alamat = document.getElementById("field-alamat").value.trim();
+  const catatan = document.getElementById("field-catatan").value.trim();
+
+  const identitas = { nama: nama, telepon: telepon, alamat: alamat, catatan: catatan };
+  localStorage.setItem("identitasPemesanan", JSON.stringify(identitas));
 
   const total = subtotal + biayaLayanan;
 
@@ -125,4 +154,5 @@ function kembaliKeKeranjang() {
 
 window.onload = function () {
   loadPayment();
+  loadIdentity();
 };

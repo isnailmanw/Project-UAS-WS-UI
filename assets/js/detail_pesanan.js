@@ -6,7 +6,14 @@ function loadDetailPesanan() {
     return;
   }
 
-  const transaksi = history[history.length - 1];
+  const selectedIndex = localStorage.getItem("selectedHistory");
+  let transaksi;
+  if (selectedIndex !== null && history[selectedIndex]) {
+    transaksi = history[selectedIndex];
+    localStorage.removeItem("selectedHistory");
+  } else {
+    transaksi = history[history.length - 1];
+  }
 
   const itemContainer = document.getElementById("order-items");
 
@@ -80,6 +87,16 @@ function loadDetailPesanan() {
 
   document.getElementById("total-bayar").textContent =
     "Rp" + total.toLocaleString("id-ID");
+
+  const namaEl = document.getElementById("identitas-nama");
+  const teleponEl = document.getElementById("identitas-telepon");
+  const alamatEl = document.getElementById("identitas-alamat");
+  const catatanEl = document.getElementById("identitas-catatan");
+
+  if (namaEl) namaEl.textContent = transaksi.namaUser || "-";
+  if (teleponEl) teleponEl.textContent = transaksi.telepon || "-";
+  if (alamatEl) alamatEl.textContent = transaksi.alamat || "-";
+  if (catatanEl) catatanEl.textContent = transaksi.catatan || "-";
 }
 
 // ==========================

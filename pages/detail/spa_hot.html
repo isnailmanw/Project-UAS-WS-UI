@@ -1,56 +1,81 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Hot Stone Therapy</title>
-
+    <title>Hot Stone Therapy — ZENIS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../../assets/css/detail_produk.css" />
-    
   </head>
-
   <body>
+    <!-- NAVBAR -->
     <nav class="navbar">
-      
       <div class="logo">ZEN<span>IS</span></div>
-
       <div class="nav-menu">
-        <a href="../dashboard_user.html"> Beranda </a>
-
-        <a href="../artikel.html"> Artikel </a>
-
-        <a href="../history.html"> Riwayat </a>
+        <a href="../dashboard_user.html">Beranda</a>
+        <a href="../artikel.html">Artikel</a>
+        <a href="../history.html">Riwayat</a>
       </div>
-
       <div class="nav-right">
-        <a href="../keranjang.html"> 🛒 </a>
+        <a href="../keranjang.html" class="icon-btn"
+          ><i class="bi bi-bag"></i
+        ></a>
+        <span class="user-label">User</span>
+        <a href="../login.html" class="logout-btn">Keluar</a>
       </div>
     </nav>
 
+    <!-- BREADCRUMB STRIP -->
+    <div class="breadcrumb-strip">
+      <div class="breadcrumb">
+        <a href="../dashboard_user.html">Beranda</a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="../dashboard_user.html#layanan">Spa</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Hot Stone Therapy</span>
+      </div>
+    </div>
+
+    <!-- HERO GALLERY -->
+    <section class="product-hero">
+      <div class="hero-gallery">
+        <div class="hero-main">
+          <img
+            class="product-image"
+            src="../../assets/img/hot.jpg"
+            alt="Hot Stone Therapy"
+          />
+          <span class="card-tag"><i class="bi bi-flower2"></i> Spa</span>
+          <span class="fav-btn"><i class="bi bi-heart"></i></span>
+        </div>
+      </div>
+    </section>
+
     <div class="container">
       <div class="detail-wrapper">
-        <!-- GAMBAR -->
+        <!-- KONTEN UTAMA -->
+        <div class="product-main">
+          <div class="eyebrow-row">
+            <span class="eyebrow"
+              ><i class="bi bi-patch-check-fill"></i> Senior
+              Therapist</span
+            >
+            <div class="rating">
+              <span class="star"><i class="bi bi-star-fill"></i></span>
+              5.0
+              <span class="rating-count">(187 Ulasan)</span>
+            </div>
+          </div>
 
-        <img
-          class="product-image"
-          src="../../assets/img/hot.jpg"
-          alt="Hot Stone Therapy"
-        />
-
-        <!-- DETAIL -->
-
-        <div class="product-info">
           <h1>Hot Stone Therapy</h1>
-
-          <div class="price">Rp220.000</div>
 
           <p class="description">
             Hot Stone Therapy merupakan perawatan spa premium yang menggunakan
@@ -61,34 +86,115 @@
             menyegarkan tubuh dan pikiran.
           </p>
 
+          <!-- TAB NAV -->
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="benefit">Benefits</button>
+            <button class="tab-btn" data-tab="fasilitas">Fasilitas</button>
+            <button class="tab-btn" data-tab="ulasan">Ulasan</button>
+          </div>
+
+          <div class="tab-panel active" id="benefit">
+            <ul class="check-list">
+              <li>
+                <i class="bi bi-check2"></i> Meredakan ketegangan otot secara mendalam
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Membantu meningkatkan sirkulasi darah
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Mengurangi stres dan kelelahan fisik
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Memberikan relaksasi menyeluruh pada tubuh dan pikiran
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="fasilitas">
+            <ul class="check-list">
+              <li>
+                <i class="bi bi-check2"></i> Senior Spa Therapist
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Terapi Batu Panas Premium
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Ruang Perawatan Privat Eksklusif
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> Air Mineral, Teh Herbal, dan Aromatic Towel
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="ulasan">
+            <div class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">M</div>
+                <div>
+                  <strong>Maya S.</strong>
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Batu panasnya bikin otot-otot yang tegang langsung lemas. Pengalaman spa terbaik!
+              </p>
+            </div>
+            <div class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">B</div>
+                <div>
+                  <strong>Budi P.</strong>
+                  <div class="review-stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Worth it banget, badan jadi terasa lebih segar dan ringan setelah terapi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDER CARD (sticky) -->
+        <aside class="order-card">
+          <div class="order-price-row">
+            <span class="order-label">Harga Mulai</span>
+            <div class="price">Rp 220.000</div>
+          </div>
+
           <div class="product-meta">
             <div class="meta-box">
+              <i class="bi bi-clock"></i>
               <span>Durasi</span>
               <strong>90 Menit</strong>
             </div>
-
             <div class="meta-box">
+              <i class="bi bi-people"></i>
               <span>Kapasitas</span>
               <strong>1 Peserta</strong>
             </div>
-
             <div class="meta-box">
-              <span>Terapis</span>
-              <strong>Senior Therapist</strong>
+              <i class="bi bi-bar-chart"></i>
+              <span>Level</span>
+              <strong>Menengah</strong>
             </div>
-
             <div class="meta-box">
+              <i class="bi bi-star"></i>
               <span>Rating</span>
               <strong>5.0/5</strong>
             </div>
-
-            <div class="rating">
-            <span class="star">★★★★★</span>
-
-            5.0
-
-            <span>(187 Ulasan)</span>
-          </div>
           </div>
 
           <div class="action-buttons">
@@ -97,64 +203,105 @@
               onclick="
                 tambahKeranjang(
                   'Hot Stone Therapy',
-
                   220000,
-
                   '../assets/img/hot.jpg',
-
                   'Spa',
-
                   '90 Menit',
                 )
               "
             >
-              Tambah Keranjang
+              <i class="bi bi-bag-plus"></i> Tambah Keranjang
             </button>
 
             <button
               class="buy-btn"
               onclick="pesanSekarang('Hot Stone Therapy', 220000)"
             >
-              Pesan Sekarang
+              Pesan Sekarang <i class="bi bi-arrow-right"></i>
             </button>
           </div>
-        </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <i class="bi bi-shield-check"></i>
+              <span>Pembayaran Aman</span>
+            </div>
+            <div class="trust-item">
+              <i class="bi bi-arrow-counterclockwise"></i>
+              <span>Refleksibel Reschedule</span>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      <!-- BENEFIT -->
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>Benefits</h3>
-
-          <ul>
-            <li>✓ Meredakan ketegangan otot secara mendalam</li>
-
-            <li>✓ Membantu meningkatkan sirkulasi darah</li>
-
-            <li>✓ Mengurangi stres dan kelelahan fisik</li>
-
-            <li>✓ Memberikan relaksasi menyeluruh pada tubuh dan pikiran</li>
-          </ul>
+      <!-- RELATED -->
+      <section class="related-section">
+        <div class="section-label">Layanan Terkait</div>
+        <div class="related-grid">
+          <a href="spa_relaxation.html" class="related-card">
+            <img src="../../assets/img/relaxation.jpg" alt="Relaxation Massage" />
+            <div class="related-body">
+              <h4>Relaxation Massage</h4>
+              <span class="related-price">Rp 150.000</span>
+            </div>
+          </a>
+          <a href="spa_aromatherapy.html" class="related-card">
+            <img src="../../assets/img/aromatherapy.jpg" alt="Aromatherapy Massage" />
+            <div class="related-body">
+              <h4>Aromatherapy Massage</h4>
+              <span class="related-price">Rp 180.000</span>
+            </div>
+          </a>
+          <a href="../wellness_stress.html" class="related-card">
+            <img src="../../assets/img/stress.jpg" alt="Stress Recovery Program" />
+            <div class="related-body">
+              <h4>Stress Recovery Program</h4>
+              <span class="related-price">Rp 280.000</span>
+            </div>
+          </a>
         </div>
-
-        <div class="info-card">
-          <h3>Fasilitas</h3>
-
-          <ul>
-            <li>✓ Senior Spa Therapist</li>
-
-            <li>✓ Terapi Batu Panas Premium</li>
-
-            <li>✓ Ruang Perawatan Privat Eksklusif</li>
-
-            <li>✓ Air Mineral, Teh Herbal, dan Aromatic Towel</li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </div>
 
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">ZEN<span>IS</span></div>
+        <p>© 2026 ZENIS Wellness Marketplace. Semua hak dilindungi.</p>
+      </div>
+    </footer>
+
     <script src="../../assets/js/keranjang.js"></script>
-    
+    <script>
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-panel")
+            .forEach((p) => p.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
+      });
+
+      document.querySelectorAll(".thumb").forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          document
+            .querySelectorAll(".thumb")
+            .forEach((t) => t.classList.remove("active"));
+          thumb.classList.add("active");
+          document.querySelector(".hero-main .product-image").src =
+            thumb.querySelector("img").src;
+        });
+      });
+
+      document.querySelector(".fav-btn").addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.querySelector("i").className = this.classList.contains("active")
+          ? "bi bi-heart-fill"
+          : "bi bi-heart";
+      });
+    </script>
   </body>
 </html>
